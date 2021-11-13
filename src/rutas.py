@@ -19,7 +19,7 @@ def inicio():
 @app.route('/login')
 def login():
     var = "login"
-    return render_template('prueba.html', var=var)
+    return render_template('inicio_sesion.html', var=var)
 
 @app.route('/recuperar')
 def recuperar():
@@ -27,19 +27,19 @@ def recuperar():
     email="jsaboya@uninorte.edu.co"
     yag = yagmail.SMTP('misionticuninorte@gmail.com', 'Mi$ionTic2022') 
     yag.send(to=email, subject='Recupera tu contraseña',
-    contents='Bienvenido,\n a continuación te presento tu información para que puedas iniciar sesión:\n antiguo password : prueba\ningresa en este link:\nhttp://127.0.0.1:5000/reestablecer')
+    contents='Bienvenido,\n A continuación te presento tu información para que puedas iniciar sesión:\n antiguo password : prueba\ningresa en este link:\nhttp://127.0.0.1:5000/reestablecer')
     flash('Revisa tu correo para activar tu cuenta')  
-    return render_template('prueba.html', var=var)
+    return render_template('recuperar_datos.html', var=var)
 
 @app.route('/reestablecer')
 def reestablecer():
     var = "reestablecer contraseña"
-    return render_template('prueba.html', var=var)
+    return render_template('reestablecer_contraseña.html', var=var)
 
 @app.route('/registro')
 def registro():
     var = "registro externo"
-    return render_template('prueba.html', var=var)
+    return render_template('registro_usuario.html', var=var)
 
 @app.route('/buscar')
 def buscar():
@@ -62,7 +62,7 @@ def listaf():
 @app.route('/user/listadeseos')
 def listadeseo():
     var = "lista de deseos"
-    return render_template('prueba.html', var=var)
+    return render_template('lista_deseos.html', var=var)
 
 @app.route('/user/listacompras')
 def listacompra():
@@ -90,7 +90,7 @@ def adminproductos():
 @app.route('/admin/productos-gestion')
 def adminproductosgestion():
     var = "admin productos actualizar o eliminar"
-    return render_template('prueba.html', var=var)
+    return render_template('administrador_productos.html', var=var)
 
 @app.route('/admin/productos-agregar')
 def adminproductosagregar():
@@ -105,7 +105,7 @@ def adminclientes():
 @app.route('/admin/usuarios')
 def adminusuarios():
     var = "admin usuarios"
-    return render_template('prueba.html', var=var)
+    return render_template('administrador_usuarios.html', var=var)
 
 @app.route('/admin/listados-clientes')
 def adminlisclientes():
