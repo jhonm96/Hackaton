@@ -5,6 +5,6 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY']=os.urandom(32)
 
-from app import rutas
+from src import rutas
 
 
