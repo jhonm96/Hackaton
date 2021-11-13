@@ -1,7 +1,8 @@
 from peewee import *
 import datetime
 
-db = MySQLDatabase('my_database', host='localhost', port=3306, user='root', passwd='root')
+
+db = MySQLDatabase('my_database', host='localhost', port=3306, user='root', password='root')
 
 class Producto(Model):
     cod_prod = PrimaryKeyField()
@@ -13,7 +14,6 @@ class Producto(Model):
     und_vendidas = IntegerField()
     total_venta = IntegerField()
     calif_prom = DoubleField()
-    desc_promo = IntegerField()
     apl_desc = CharField()
     acum_desc = IntegerField()
     id_coment = IntegerField()
@@ -142,8 +142,7 @@ class ComprasUsuario(Model):
 class Carrito(Model):
     id_carrito = PrimaryKeyField()
     id_usuario = ForeignKeyField(Usuario, related_name='id_usuarios')
-    id_usuario = CharField()
-    cod_prod = CharField()
+    cod_prod = ForeignKeyField(Producto, related_name='cod_prod')
     precio_und = IntegerField()
     precio_total = IntegerField()
 
@@ -166,25 +165,26 @@ def crearTablas():
     ComprasUsuario.crearTabla()
     Carrito.crearTabla()
     
-def registrar(usuario, contrraseña, email, nombre, apellido, cedula, sexo, fecha_nac, direccion, ciudad):
-        Usuario.create(
-            username = usuario,
-            password = contrraseña,
-            email = email,
-            nombre = nombre,
-            apellido = apellido,
-            cedula = cedula,
-            sexo = sexo,
-            fecha_nac = fecha_nac,
-            direccion = direccion,
-            ciudad = ciudad)
-        Usuario.save()
+def registrar(usuario, contraseña, email, nombre, apellido, cedula, sexo, fecha_nac, direccion, ciudad):
+    persona = Usuario(
+        username = usuario,
+        password = contraseña,
+        email = email,
+        nombre = nombre,
+        apellido = apellido,
+        cedula = cedula,
+        sexo = sexo,
+        fecha_nac = fecha_nac,
+        direccion = direccion,
+        ciudad = ciudad)
+    persona.save()
 
+def registroProducto(nombre_prod, inventario, presentacion, precio_und, desc_promo ):
+    producto = Producto(
+        nombre_prod = nombre_prod,
+        inventario = inventario,
+        presentacion = presentacion,
+        precio_und = precio_und,
+        desc_promo = desc_promo)
+    producto.save()
 
-    
-
-print(registrar('juan', '123', 'juan@123', 'Juan', 'Perez', '123456789', 'M', '1990-01-01', 'Calle 123', 'Bogota')
-)
-
-    
-    

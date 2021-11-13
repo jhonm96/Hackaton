@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="/registro" method="post">
         <div>
             <input type="text" name="username" id="username" placeholder="Username">
         </div>
@@ -24,9 +24,10 @@
             <input type="email" name="email" id="email" placeholder="E-mail">
         </div>
         <div>
-            <label>M </label><input type="radio" name="sexo" id="sexo" value="M">
-        
-            <label>F </label><input type="radio" name="sexo" id="sexo" value="F">
+            <select name = "sexo" id="sexo">
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
+            </select>
         </div>
         <div>
             <label>Fecha de Nacimiento</label>

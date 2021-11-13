@@ -1,5 +1,8 @@
 from flask import Flask, render_template, request, redirect, session
-import Modelo, werkzeug.security as ws
+import Modelo, sys
+import werkzeug.security as ws
+
+# sys.setrecursionlimit(9999)
 
 
 
@@ -24,6 +27,7 @@ def home():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    Modelo.registroProducto('producto_X', 'inventario_x', 'bolsa', 1500, 0)
     return render_template('index.html')
 
 @app.route('/registro', methods=['GET', 'POST'])
@@ -42,12 +46,13 @@ def registro():
         ciudad = request.form['ciudad']
         password = request.form['password']
         ver_password = request.form['ver_password']
+        
         if password == ver_password:
-            Modelo.registrar(username, ws.generate_password_hash(password), email, nombre, apellido, cedula, sexo, fechaNacimiento, direccion, ciudad)
+            Modelo.registrar(username, password, email, nombre, apellido, cedula, sexo, fechaNacimiento, direccion, ciudad)
             return redirect('/login')
         else:
             return render_template('registro.html')
-
+        
 if __name__ == '__main__':
     app.run(debug=True, port='8000')
     Modelo.crearTablas()
