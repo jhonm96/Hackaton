@@ -106,8 +106,7 @@ def adminproductosagregar():
 
 @app.route('/admin/clientes')
 def adminclientes():
-    var = "admin clientes"
-    return render_template('prueba.html', var=var)
+    return render_template('administracion_clientes.html')
 
 @app.route('/admin/usuarios')
 def adminusuarios():
