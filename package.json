@@ -1,0 +1,22 @@
+{
+  "name": "hackaton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhonm96/Hackaton.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhonm96/Hackaton/issues"
+  },
+  "homepage": "https://github.com/jhonm96/Hackaton#readme",
+  "dependencies": {
+    "tailwindcss": "^2.2.19"
+  }
+}
