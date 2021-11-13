@@ -6,6 +6,7 @@ from flask.helpers import make_response, url_for
 from markupsafe import escape
 from werkzeug.security import check_password_hash, generate_password_hash
 from datetime import datetime
+import yagmail
 
 
 #Inicio
@@ -23,6 +24,11 @@ def login():
 @app.route('/recuperar')
 def recuperar():
     var = "recuperar contraseña"
+    email="jsaboya@gmail.com"
+    yag = yagmail.SMTP('misionticuninorte@gmail.com', 'Mi$ionTic2022') 
+    yag.send(to=email, subject='Recupera tu contraseña',
+    contents='Bienvenido,\n a continuacion te presento tu informacion:\nantiguo password:prueba\ningresa en este link /reestablecer')
+    flash('Revisa tu correo para activar tu cuenta')  
     return render_template('prueba.html', var=var)
 
 @app.route('/reestablecer')
