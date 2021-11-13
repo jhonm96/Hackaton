@@ -119,14 +119,14 @@
                 </div>
                 <div class="w-full md:w-1/2 xl:w-1/3 p-3">
                     <!--Metric Card-->
-                    <div class="bg-gray-900 border border-gray-800 rounded shadow p-2">
+                    <div class="bg-purple-400 border border-gray-800 rounded shadow p-2">
                         <div class="flex flex-row items-center">
                             <div class="flex-shrink pr-4">
                                 <div class="rounded p-3 bg-pink-600"><i class="fas fa-users fa-2x fa-fw fa-inverse"></i></div>
                             </div>
                             <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold uppercase text-gray-400">Total Usuarios</h5>
-                                <h3 class="font-bold text-3xl text-gray-600">249 <span class="text-pink-500"><i class="fas fa-exchange-alt"></i></span></h3>
+                                <h5 class="font-bold uppercase text-gray-900">Total Usuarios</h5>
+                                <h3 class="font-bold text-3xl text-gray-900">249 <span class="text-pink-500"><i class="fas fa-exchange-alt"></i></span></h3>
                             </div>
                         </div>
                     </div>
@@ -168,63 +168,122 @@
 			<!--Divider-->
 			<hr class="border-b-2 border-gray-600 my-20  mx-4">
 
-            <div class="flex flex-row flex-wrap flex-grow mt-2">
-
-  
-                <div class="w-full p-3">
-                    <!--Table Card-->
-                    <div class="bg-gray-900 border border-gray-800 rounded shadow">
-                        <div class="border-b border-gray-800 p-3">
-                            <h5 class="text-center font-bold uppercase text-gray-600">Usuarios Recientes</h5>
-                        </div>
-                        <div class="p-5 flex ">
-                            <table class="w-full  table-fixed justify-start  text-gray-700">                                
-                                    <tr class=''>
-                                        <th><img class="w-8 h-8 rounded-full " src="http://i.pravatar.cc/300" alt="Avatar of User"></th>
-                                        <th class="text-left text-gray-600">#11</th>
-                                        <th class="text-left text-gray-600">juan teheran</th>
-                                        <th class="text-left text-gray-600">Tutor</th>
-                                        
-                                    </tr>                          
-                                    <tr class=''>
-                                        <th><img class="w-8 h-8 rounded-full " src="http://i.pravatar.cc/300" alt="Avatar of User"></th>
-                                        <th class="text-left text-gray-600">#12</th>
-                                        <th class="text-left text-gray-600">juan Pablo</th>
-                                        <th class="text-left text-gray-600">Support</th>
-                                        
-                                    </tr>
-                                    <tr class=''>
-                                        <th><img class="w-8 h-8 rounded-full " src="http://i.pravatar.cc/300" alt="Avatar of User"></th>
-                                        <th class="text-left text-gray-600">#18</th>
-                                        <th class="text-left text-gray-600">willy noseque</th>
-                                        <th class="text-left text-gray-600">Db Support</th>
-                                        
-                                    </tr>
-                                    <tr class=''>
-                                        <th><img class="w-8 h-8 rounded-full " src="http://i.pravatar.cc/300" alt="Avatar of User"></th>
-                                        <th class="text-left text-gray-600">#1</th>
-                                        <th class="text-left text-gray-600">Jhon Trujillo</th>
-                                        <th class="text-left text-gray-600">Presidente Ejecutivo</th>
-                                        
-                                    </tr>
-                                    <tr class=''>
-                                        <th><img class="w-8 h-8 rounded-full " src="http://i.pravatar.cc/300" alt="Avatar of User"></th>
-                                        <th class="text-left text-gray-600">#20</th>
-                                        <th class="text-left text-gray-600">El otro Jhon</th>
-                                        <th class="text-left text-gray-600">Willi's Support</th>
-                                        
-                                    </tr>
-                                
-                                
-                            </table>
-
-                        </div>
-                    </div>
-                    <!--/table Card-->
+            <section class="container mx-auto p-6  font-mono">
+                <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+                  <div class="w-full overflow-x-auto ">
+                    <table class="w-full ">
+                      <thead>
+                        <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-purple-200 uppercase border-b border-gray-600">
+                          <th class="px-4 py-3">Name</th>
+                          <th class="px-4 py-3">Age</th>
+                          <th class="px-4 py-3">Status</th>
+                          <th class="px-4 py-3">Date</th>
+                        </tr>
+                      </thead>
+                      <tbody class="bg-purple-20">
+                        <tr class="text-gray-700">
+                          <td class="px-4 py-3 border">
+                            <div class="flex items-center text-sm">
+                              <div class="relative w-8 h-8 mr-3 rounded-full">
+                                <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
+                                <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                              </div>
+                              <div>
+                                <p class="font-semibold text-black">Stevens</p>
+                                <p class="text-xs text-gray-600">Programmer</p>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="px-4 py-3 text-md font-semibold border">27</td>
+                          <td class="px-4 py-3 text-xs border">
+                            <span class="px-2 py-1 font-semibold leading-tight text-orange-700 bg-gray-100 rounded-sm"> Pending </span>
+                          </td>
+                          <td class="px-4 py-3 text-sm border">6/10/2020</td>
+                        </tr>
+                        <tr class="text-gray-700">
+                          <td class="px-4 py-3 border">
+                            <div class="flex items-center text-sm">
+                              <div class="relative w-8 h-8 mr-3 rounded-full">
+                                <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
+                                <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                              </div>
+                              <div>
+                                <p class="font-semibold">Nora</p>
+                                <p class="text-xs text-gray-600">Designer</p>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="px-4 py-3 text-md font-semibold border">17</td>
+                          <td class="px-4 py-3 text-xs border">
+                            <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-sm"> Nnacceptable </span>
+                          </td>
+                          <td class="px-4 py-3 text-sm border">6/10/2020</td>
+                        </tr>
+                        <tr class="text-gray-700">
+                          <td class="px-4 py-3 border">
+                            <div class="flex items-center text-sm">
+                              <div class="relative w-8 h-8 mr-3 rounded-full">
+                                <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
+                                <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                              </div>
+                              <div>
+                                <p class="font-semibold">Ali</p>
+                                <p class="text-xs text-gray-600">Programmer</p>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="px-4 py-3 border text-md font-semibold">23</td>
+                          <td class="px-4 py-3 border text-xs">
+                            <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Acceptable </span>
+                          </td>
+                          <td class="px-4 py-3 border text-sm">6/10/2020</td>
+                        </tr>
+                        <tr class="text-gray-700">
+                          <td class="px-4 py-3 border">
+                            <div class="flex items-center text-sm">
+                              <div class="relative w-8 h-8 mr-3 rounded-full">
+                                <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
+                                <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                              </div>
+                              <div>
+                                <p class="font-semibold">Khalid</p>
+                                <p class="text-xs text-gray-600">Designer</p>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="px-4 py-3 border text-md font-semibold">20</td>
+                          <td class="px-4 py-3 border text-xs">
+                            <span class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-sm"> Pending </span>
+                          </td>
+                          <td class="px-4 py-3 border text-sm">6/10/2020</td>
+                        </tr>
+                        <tr class="text-gray-700">
+                          <td class="px-4 py-3 border">
+                            <div class="flex items-center text-sm">
+                              <div class="relative w-8 h-8 mr-3 rounded-full">
+                                <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
+                                <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                              </div>
+                              <div>
+                                <p class="font-semibold">Nasser</p>
+                                <p class="text-xs text-gray-600">Pen Tester</p>
+                              </div>
+                            </div>
+                          </td>
+                          <td class="px-4 py-3 border text-md font-semibold">29</td>
+                          <td class="px-4 py-3 border text-xs">
+                            <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Acceptable </span>
+                          </td>
+                          <td class="px-4 py-3 border text-sm">6/10/2020</td>
+                        </tr>
+              
+              
+              
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-
-
-            </div>
+              </section>
 								
 			<!--/ Console Content-->
 					
@@ -234,7 +293,7 @@
 	</div> 
 	<!--/container-->
 	
-	<footer class="bg-gray-900 border-t border-gray-400 shadow">	
+    <footer class="bg-gray-700 border-t border-gray-400 shadow -mb-20">	
 		<div class="container max-w-md mx-auto flex py-8">
 
 			<div class="w-full mx-auto flex flex-wrap">
@@ -250,17 +309,15 @@
 				<div class="flex w-full md:w-1/2">
 					<div class="px-8">
 					<h3 class="font-bold font-bold text-gray-100">Social</h3>
-						<ul class="list-reset items-center text-sm pt-3">
-						  <li>
-							<a class="inline-block text-gray-600 no-underline hover:text-gray-100 hover:text-underline py-1" href="#">Add social link</a>
-						  </li>
-						  <li>
-							<a class="inline-block text-gray-600 no-underline hover:text-gray-100 hover:text-underline py-1" href="#">Add social link</a>
-						  </li>
-							<li>
-							<a class="inline-block text-gray-600 no-underline hover:text-gray-100 hover:text-underline py-1" href="#">Add social link</a>
-						  </li>
-						</ul>
+                    <ul class="list-reset items-center text-sm pt-3">
+                        <li>
+                          <i class="fab fa-instagram "></i> <a class="inline-block text-gray-100 no-underline hover:text-gray-100 hover:text-underline py-1" href="#">INSTAGRAM </a>
+                        </li>
+                        <li>
+                          <i class="fab fa-facebook"></i> <a class="inline-block text-gray-100 no-underline hover:text-gray-100 hover:text-underline py-1" href="#">FACEBOOK</a>
+                        </li>
+
+                      </ul>
 					</div>
 				</div>
 			</div>

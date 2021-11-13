@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Administrar usuarios</title>
+    <title>Administrar Productos</title>
     <meta name="description" content="description here">
     <meta name="keywords" content="keywords,here">
 	
@@ -18,7 +18,7 @@
 </head>
 <body class=" font-sans leading-normal tracking-normal">
 
-    <nav id="header" class="bg-purple-100 fixed w-full z-10 top-0 shadow">
+<nav id="header" class="bg-purple-100 fixed w-full z-10 top-0 shadow">
 	
 
 		<div class="w-full container  bg-purple-100 flex  items-center mt-0 md:pb-0">
@@ -28,7 +28,7 @@
             </div>
 
             <div class="relative text-gray-600 bg-center">
-                <input type="search" name="serch" placeholder="Nombre/Cedula"
+                <input type="search" name="serch" placeholder="Nombre/Codigo"
                   class="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none">
                 <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
                   <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
@@ -69,6 +69,7 @@
 			
 		</div>
 	</nav>
+
 	<!--Container-->
 	<div class="flex w-full  mx-auto ">
 
@@ -118,67 +119,83 @@
 			<div class="flex flex-wrap items-center">
                 <div class="flex flex-wrap w-full mx-3">
                     <div class="w-1/2 px-3 mb-5">
-                        <label for="" class="text-xs font-semibold px-1">Nombres y Apellidos</label>
+                        <label for="" class="text-xs font-semibold px-1">Nombre</label>
                         <div class="flex">
                             <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" placeholder="Ej : Juan teheran">
+                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-400 outline-none focus:border-indigo-500" >
                         </div>
-                    
-                        <label for="" class="text-xs font-semibold px-1">Cedula</label>
+                        
+                    </div>
+                    <div class="w-1/2 px-3 mb-5">
+                        <label for="" class="text-xs font-semibold px-1">Codigo</label>
                         <div class="flex">
                             <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" >
+                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-400 outline-none focus:border-indigo-500" >
                         </div>
-                  
+                    </div>
                     
-              
-                    
-                        <label for="" class="text-xs font-semibold px-1">Sexo</label>
+                
+                
+                    <div class="w-1/2 px-3 mb-5">
+                        <label for="" class="text-xs font-semibold px-1">Tipo de unidad</label>
                         <div class="flex">
                             <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" >
+                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-400 outline-none focus:border-indigo-500" >
                         </div>
-                       
-                    
-                    
-                        <label for="" class="text-xs font-semibold px-1">Fecha de nacimiento</label>
+                        
+                    </div>
+                    <div class="w-1/2 px-3 mb-5">
+                        <label for="" class="text-xs font-semibold px-1">Fecha de Ingreso</label>
                         <div class="flex">
                             <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                            <input type="date" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" >
+                            <input type="date" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-400 outline-none focus:border-indigo-500" >
                         </div>
+                    </div>
                     
-                  
-                    
-                        <label for="" class="text-xs font-semibold px-1">Direccion</label>
+                
+                
+                    <div class="w-1/2 px-3 mb-5">
+                        <label for="" class="text-xs font-semibold px-1">Porcentage de Promocion</label>
                         <div class="flex">
                             <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" placeholder="Ej: Cra 24 # 21-25">
+                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-400 outline-none focus:border-indigo-500" >
                         </div>
                         <!-- Fecha de nacimiento <input type="date"> -->
-                    
-                    
-                        <label for="" class="text-xs font-semibold px-1">Ciudad</label>
+                    </div>
+                    <div class="w-1/2 px-3 mb-5">
+                        <label for="" class="text-xs font-semibold px-1">Precio unitario</label>
                         <div class="flex">
                             <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" placeholder="Ej: Medellin">
+                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-400 outline-none focus:border-indigo-500" >
                         </div>
-                    
-                    
-                        <label for="" class="text-xs font-semibold px-1">Cargo</label>
+                    </div>
+                    <div class="w-1/2 px-3 mb-5">
+                        <label for="" class="text-xs font-semibold px-1">Aplica bono de Descuento?</label>
                         <div class="flex">
                             <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" placeholder="Ej: Administrador">
+                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-400 outline-none focus:border-indigo-500" placeholder="Ej: Si/No">
                         </div>
                     </div>
                     
+                
+                
+                    <div class="w-full px-3 mb-5">
+                        <label for="" class="text-xs font-semibold px-1">Cantidad Estandar de Productos X lote</label>
+                        <div class="flex">
+                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-email-outline text-gray-400 text-lg"></i></div>
+                            <input type="Texto" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-400 outline-none focus:border-indigo-500" >
+                        </div>
+                    </div>
+                
+                
                 </div>
                 <div>
-                <div class="flex ">
-                    <div class="w-full px-3 m-10 ml-40">
-                        <button  class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">ACTUALIZAR</button>
+                <div class="flex justify-center ml-20">
+                    <div class="w-full px-3 m-20  ">
+                        <button  class="block w-30 max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">ACTUALIZAR</button>
                     </div>
-                    <div class="w-full px-3 m-10  ">
-                        <button  class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">ELIMINAR</button>
+                    <div class="w-full px-3 m-20  ">
+                        <button  class="block w-30 max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">ELIMINAR</button>
                     </div>
 
                 </div>
@@ -188,49 +205,47 @@
 			<!--Divider-->
 		
 
-            								
-			<!--/ Console Content-->
-					
-		</div>
-        <footer class="bg-gray-700 border-t border-gray-400 shadow -mb-14">	
-            <div class="container max-w-md mx-auto flex py-8">
-    
-                <div class="w-full mx-auto flex flex-wrap">
-                    <div class="flex w-full md:w-1/2 ">
-                        <div class="px-8">
-                            <h3 class="font-bold font-bold text-gray-100">Desarrollado por:</h3>
-                            <p class="py-4 text-gray-100 text-sm">
-                             Jhon Trujillo <br> Juan pablo <br> willy <br> el otro jhon <br> Juan teheran 
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex w-full md:w-1/2">
-                        <div class="px-8">
-                        <h3 class="font-bold font-bold text-gray-100">Social</h3>
-                            <ul class="list-reset items-center text-sm pt-3">
-                              <li>
-                                <i class="fab fa-instagram "></i> <a class="inline-block text-gray-100 no-underline hover:text-gray-100 hover:text-underline py-1" href="#">INSTAGRAM </a>
-                              </li>
-                              <li>
-                                <i class="fab fa-facebook"></i> <a class="inline-block text-gray-100 no-underline hover:text-gray-100 hover:text-underline py-1" href="#">FACEBOOK</a>
-                              </li>
+            
 
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            
-    
-            
-            </div>
-        </footer>
-        
+  
+
 		
 
 	</div> 
 	<!--/container-->
-    
+    <footer class="bg-gray-700 border-t border-gray-400 shadow -mb-20">	
+		<div class="container max-w-md mx-auto flex py-8">
+
+			<div class="w-full mx-auto flex flex-wrap">
+				<div class="flex w-full md:w-1/2 ">
+					<div class="px-8">
+						<h3 class="font-bold font-bold text-gray-100">About</h3>
+						<p class="py-4 text-gray-600 text-sm">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel mi ut felis tempus commodo nec id erat. Suspendisse consectetur dapibus velit ut lacinia. 
+						</p>
+					</div>
+				</div>
+				
+				<div class="flex w-full md:w-1/2">
+					<div class="px-8">
+					<h3 class="font-bold font-bold text-gray-100">Social</h3>
+                    <ul class="list-reset items-center text-sm pt-3">
+                        <li>
+                          <i class="fab fa-instagram "></i> <a class="inline-block text-gray-100 no-underline hover:text-gray-100 hover:text-underline py-1" href="#">INSTAGRAM </a>
+                        </li>
+                        <li>
+                          <i class="fab fa-facebook"></i> <a class="inline-block text-gray-100 no-underline hover:text-gray-100 hover:text-underline py-1" href="#">FACEBOOK</a>
+                        </li>
+
+                      </ul>
+					</div>
+				</div>
+			</div>
+        
+
+		
+		</div>
+	</footer>
 	
 
 
@@ -292,5 +307,16 @@
 
 </script>
 
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+

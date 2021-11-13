@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Administrar usuarios</title>
+    <title>Administrar Clientes</title>
     <meta name="description" content="description here">
     <meta name="keywords" content="keywords,here">
 	
@@ -18,15 +18,30 @@
 </head>
 <body class=" font-sans leading-normal tracking-normal">
 
-<nav id="header" class="bg-purple-100 fixed w-full z-10 top-0 shadow">
+    <nav id="header" class="bg-purple-100 fixed w-full z-10 top-0 shadow">
 	
 
-		<div class="w-full container  bg-purple-100 flex flex-wrap items-center mt-0 md:pb-0">
+		<div class="w-full container  bg-purple-100 flex  items-center mt-0 md:pb-0">
 				
 			<div class="w-1/2 ">
                 <img style='width:200px' src="..//img/Logorect.png" alt="">
             </div>
-			<div class="w-1/2 ">
+
+            <div class="relative text-gray-600 bg-center">
+                <input type="search" name="serch" placeholder="Nombre/Cedula"
+                  class="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none">
+                <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
+                  <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                    viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve"
+                    width="512px" height="512px">
+                    <path
+                      d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
+                  </svg>
+                </button>
+              </div>
+
+			<div class="w-1/2  bg-right-bottom  ">
 				<div class="flex relative inline-block float-right">
 				
 				  <div class="relative text-sm text-gray-100">
@@ -104,16 +119,16 @@
 			<div class="flex flex-wrap items-center">
                 <div class="flex flex-wrap w-full mx-3">
                     <div class="w-1/2 px-3 mb-5">
-                        <label for="" class="text-xs font-semibold px-1">Nombre</label>
+                        <label for="" class="text-xs font-semibold px-1">Nombres y Apellidos</label>
                         <div class="flex">
                             <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" placeholder="Ej : Juan">
+                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" placeholder="Ej : Juan tehran">
                         </div>
                     
-                        <label for="" class="text-xs font-semibold px-1">Apellidos</label>
+                        <label for="" class="text-xs font-semibold px-1">Cedula</label>
                         <div class="flex">
                             <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" placeholder="Teheran">
+                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" >
                         </div>
                   
                     
@@ -122,7 +137,7 @@
                         <label for="" class="text-xs font-semibold px-1">Sexo</label>
                         <div class="flex">
                             <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" placeholder="Ej : rara vez XD">
+                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" ">
                         </div>
                        
                     
@@ -157,10 +172,10 @@
                 <div>
                 <div class="flex ">
                     <div class="w-full px-3 m-10 ml-40">
-                        <button style="background: #b5428f;" class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">ACTUALIZAR</button>
+                        <button  class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">ACTUALIZAR</button>
                     </div>
                     <div class="w-full px-3 m-10  ">
-                        <button style="background: #b5428f;" class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">ELIMINAR</button>
+                        <button  class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">ELIMINAR</button>
                     </div>
 
                 </div>
@@ -170,71 +185,49 @@
 			<!--Divider-->
 		
 
-            <div class="flex flex-row flex-wrap flex-grow mt-2">
-
-  
-                <div class="w-full p-3">
-                    <!--Table Card-->
-                    <div class="bg-purple-300 border border-gray-800 rounded shadow">
-                        <div class="border-b border-gray-800 p-3">
-                            <h5 class="text-center font-bold uppercase text-gray-600">Usuarios Recientes</h5>
-                        </div>
-                        <div class="p-5 flex ">
-                            <table class="w-full  table-fixed justify-start  text-gray-700">                                
-                                    <tr class=''>
-                                        <th><img class="w-8 h-8 rounded-full " src="http://i.pravatar.cc/300" alt="Avatar of User"></th>
-                                        <th class="text-left text-gray-600">#11</th>
-                                        <th class="text-left text-gray-600">juan teheran</th>
-                                        <th class="text-left text-gray-600">Tutor</th>
-                                        
-                                    </tr>                          
-                                    <tr class=''>
-                                        <th><img class="w-8 h-8 rounded-full " src="http://i.pravatar.cc/300" alt="Avatar of User"></th>
-                                        <th class="text-left text-gray-600">#12</th>
-                                        <th class="text-left text-gray-600">juan Pablo</th>
-                                        <th class="text-left text-gray-600">Support</th>
-                                        
-                                    </tr>
-                                    <tr class=''>
-                                        <th><img class="w-8 h-8 rounded-full " src="http://i.pravatar.cc/300" alt="Avatar of User"></th>
-                                        <th class="text-left text-gray-600">#18</th>
-                                        <th class="text-left text-gray-600">willy noseque</th>
-                                        <th class="text-left text-gray-600">Db Support</th>
-                                        
-                                    </tr>
-                                    <tr class=''>
-                                        <th><img class="w-8 h-8 rounded-full " src="http://i.pravatar.cc/300" alt="Avatar of User"></th>
-                                        <th class="text-left text-gray-600">#1</th>
-                                        <th class="text-left text-gray-600">Jhon Trujillo</th>
-                                        <th class="text-left text-gray-600">Presidente Ejecutivo</th>
-                                        
-                                    </tr>
-                                    <tr class=''>
-                                        <th><img class="w-8 h-8 rounded-full " src="http://i.pravatar.cc/300" alt="Avatar of User"></th>
-                                        <th class="text-left text-gray-600">#20</th>
-                                        <th class="text-left text-gray-600">El otro Jhon</th>
-                                        <th class="text-left text-gray-600">Willi's Support</th>
-                                        
-                                    </tr>
-                                
-                                
-                            </table>
-
-                        </div>
-                    </div>
-                    
-                </div>
-
-
-            </div>
+            
 								
 			<!--/ Console Content-->
 					
 		</div>
+        
 		
-
+        <footer class="bg-gray-700 border-t border-gray-400 shadow -mb-14">	
+            <div class="container max-w-md mx-auto flex py-8">
+    
+                <div class="w-full mx-auto flex flex-wrap">
+                    <div class="flex w-full md:w-1/2 ">
+                        <div class="px-8">
+                            <h3 class="font-bold font-bold text-gray-100">Desarrollado por:</h3>
+                            <p class="py-4 text-gray-100 text-sm">
+                             Jhon Trujillo <br> Juan pablo <br> willy <br> el otro jhon <br> Juan teheran 
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex w-full md:w-1/2">
+                        <div class="px-8">
+                        <h3 class="font-bold font-bold text-gray-100">Social</h3>
+                        <ul class="list-reset items-center text-sm pt-3">
+                            <li>
+                              <i class="fab fa-instagram "></i> <a class="inline-block text-gray-100 no-underline hover:text-gray-100 hover:text-underline py-1" href="#">INSTAGRAM </a>
+                            </li>
+                            <li>
+                              <i class="fab fa-facebook"></i> <a class="inline-block text-gray-100 no-underline hover:text-gray-100 hover:text-underline py-1" href="#">FACEBOOK</a>
+                            </li>
+    
+                          </ul>
+                        </div>
+                    </div>
+                </div>
+            
+    
+            
+            </div>
+        </footer>
 	</div> 
 	<!--/container-->
+    
 	
 
 
