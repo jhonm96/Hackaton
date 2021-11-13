@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard</title>
+    <title>Administrar usuarios</title>
     <meta name="description" content="description here">
     <meta name="keywords" content="keywords,here">
 	
@@ -101,79 +101,85 @@
 			
 			<!--Console Content-->
 			
-			<div class="flex flex-wrap">
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-                    <!--Metric Card-->
-                    <div class="bg-gray-900 border border-gray-800 rounded shadow p-2">
-                        <div class="flex flex-row items-center">
-                            <div class="flex-shrink pr-4">
-                                <div class="rounded p-3 bg-green-600"><i class="fa fa-wallet fa-2x fa-fw fa-inverse"></i></div>
-                            </div>
-                            <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold uppercase text-gray-400">Total Ventas</h5>
-                                <h3 class="font-bold text-3xl text-gray-600">3249 <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
-                            </div>
+			<div class="flex flex-wrap items-center">
+                <div class="flex flex-wrap w-full mx-3">
+                    <div class="w-1/2 px-3 mb-5">
+                        <label for="" class="text-xs font-semibold px-1">Nombre</label>
+                        <div class="flex">
+                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" placeholder="Ej : Juan">
+                        </div>
+                    
+                        <label for="" class="text-xs font-semibold px-1">Apellidos</label>
+                        <div class="flex">
+                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" placeholder="Teheran">
+                        </div>
+                  
+                    
+              
+                    
+                        <label for="" class="text-xs font-semibold px-1">Sexo</label>
+                        <div class="flex">
+                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" placeholder="Ej : rara vez XD">
+                        </div>
+                       
+                    
+                    
+                        <label for="" class="text-xs font-semibold px-1">Fecha de nacimiento</label>
+                        <div class="flex">
+                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                            <input type="date" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" >
+                        </div>
+                    
+                  
+                    
+                        <label for="" class="text-xs font-semibold px-1">Direccion</label>
+                        <div class="flex">
+                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" placeholder="Ej: Cra 24 # 21-25">
+                        </div>
+                        <!-- Fecha de nacimiento <input type="date"> -->
+                    
+                    
+                        <label for="" class="text-xs font-semibold px-1">Ciudad</label>
+                        <div class="flex">
+                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" placeholder="Ej: Medellin">
+                        </div>
+                    
+                    
+                        <label for="" class="text-xs font-semibold px-1">Cargo</label>
+                        <div class="flex">
+                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" placeholder="Ej: Administrador">
                         </div>
                     </div>
-                    <!--/Metric Card-->
+                    
                 </div>
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-                    <!--Metric Card-->
-                    <div class="bg-gray-900 border border-gray-800 rounded shadow p-2">
-                        <div class="flex flex-row items-center">
-                            <div class="flex-shrink pr-4">
-                                <div class="rounded p-3 bg-pink-600"><i class="fas fa-users fa-2x fa-fw fa-inverse"></i></div>
-                            </div>
-                            <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold uppercase text-gray-400">Total Usuarios</h5>
-                                <h3 class="font-bold text-3xl text-gray-600">249 <span class="text-pink-500"><i class="fas fa-exchange-alt"></i></span></h3>
-                            </div>
-                        </div>
+                <div>
+                <div class="flex ">
+                    <div class="w-full px-3 m-10 ml-40">
+                        <button style="background: #b5428f;" class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">ACTUALIZAR</button>
                     </div>
-                    <!--/Metric Card-->
-                </div>
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-                    <!--Metric Card-->
-                    <div class="bg-gray-900 border border-gray-800 rounded shadow p-2">
-                        <div class="flex flex-row items-center">
-                            <div class="flex-shrink pr-4">
-                                <div class="rounded p-3 bg-yellow-600"><i class="fas fa-user-plus fa-2x fa-fw fa-inverse"></i></div>
-                            </div>
-                            <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold uppercase text-gray-400">Nuevos Usuarios</h5>
-                                <h3 class="font-bold text-3xl text-gray-600">2 <span class="text-yellow-600"><i class="fas fa-caret-up"></i></span></h3>
-                            </div>
-                        </div>
+                    <div class="w-full px-3 m-10  ">
+                        <button style="background: #b5428f;" class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">ELIMINAR</button>
                     </div>
-                    <!--/Metric Card-->
-                </div>
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-                    <!--Metric Card-->
-                    <div class="bg-purple-400 border border-gray-800 rounded shadow p-2">
-                        <div class="flex flex-row items-center">
-                            <div class="flex-shrink pr-4">
-                                <div class="rounded p-3 bg-blue-600"><i class="fas fa-server fa-2x fa-fw fa-inverse"></i></div>
-                            </div>
-                            <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold uppercase text-gray-900">ventas de Hoy</h5>
-                                <h3 class="font-bold text-3xl text-gray-900">152</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/Metric Card-->
+
                 </div>
 
             </div>
 
 			<!--Divider-->
-			<hr class="border-b-2 border-gray-600 my-20  mx-4">
+		
 
             <div class="flex flex-row flex-wrap flex-grow mt-2">
 
   
                 <div class="w-full p-3">
                     <!--Table Card-->
-                    <div class="bg-gray-900 border border-gray-800 rounded shadow">
+                    <div class="bg-purple-300 border border-gray-800 rounded shadow">
                         <div class="border-b border-gray-800 p-3">
                             <h5 class="text-center font-bold uppercase text-gray-600">Usuarios Recientes</h5>
                         </div>
@@ -234,41 +240,7 @@
 	</div> 
 	<!--/container-->
 	
-	<footer class="bg-gray-900 border-t border-gray-400 shadow">	
-		<div class="container max-w-md mx-auto flex py-8">
 
-			<div class="w-full mx-auto flex flex-wrap">
-				<div class="flex w-full md:w-1/2 ">
-					<div class="px-8">
-						<h3 class="font-bold font-bold text-gray-100">About</h3>
-						<p class="py-4 text-gray-600 text-sm">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel mi ut felis tempus commodo nec id erat. Suspendisse consectetur dapibus velit ut lacinia. 
-						</p>
-					</div>
-				</div>
-				
-				<div class="flex w-full md:w-1/2">
-					<div class="px-8">
-					<h3 class="font-bold font-bold text-gray-100">Social</h3>
-						<ul class="list-reset items-center text-sm pt-3">
-						  <li>
-							<a class="inline-block text-gray-600 no-underline hover:text-gray-100 hover:text-underline py-1" href="#">Add social link</a>
-						  </li>
-						  <li>
-							<a class="inline-block text-gray-600 no-underline hover:text-gray-100 hover:text-underline py-1" href="#">Add social link</a>
-						  </li>
-							<li>
-							<a class="inline-block text-gray-600 no-underline hover:text-gray-100 hover:text-underline py-1" href="#">Add social link</a>
-						  </li>
-						</ul>
-					</div>
-				</div>
-			</div>
-        
-
-		
-		</div>
-	</footer>
 
 <script>
 	
