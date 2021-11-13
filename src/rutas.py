@@ -24,20 +24,24 @@ def login():
     else:
         return("Hola mundo") 
 
-@app.route('/recuperar')
+@app.route('/recuperar' ,methods=['POST', 'GET'])
 def recuperar():
-    var = "recuperar contraseña"
-    email="jsaboya@uninorte.edu.co"
-    yag = yagmail.SMTP('misionticuninorte@gmail.com', 'Mi$ionTic2022') 
-    yag.send(to=email, subject='Recupera tu contraseña',
-    contents='Bienvenido,\n A continuación te presento tu información para que puedas iniciar sesión:\n antiguo password : prueba\ningresa en este link:\nhttp://127.0.0.1:5000/reestablecer')
-    flash('Revisa tu correo para activar tu cuenta')  
-    return render_template('recuperar_datos.html', var=var)
+    if request.method =="GET":
+        return render_template('Recuperaciondatos.html')
+    else:
+        email = request.form.get("email")
+        if email == "" or email == " ":
+            flash("Correo no valido")
+        else:
+            yag = yagmail.SMTP('misionticuninorte@gmail.com', 'Mi$ionTic2022') 
+            yag.send(to=email, subject='Recupera tu contraseña',
+            contents='Bienvenido,\n A continuación te presento tu información para que puedas iniciar sesión:\n antiguo password : prueba\ningresa en este link:\nhttp://127.0.0.1:5000/reestablecer')
+            flash('Revisa tu correo para activar tu cuenta')  
+            return render_template('Recuperaciondatos.html')
 
-@app.route('/reestablecer')
+@app.route('/reestablecer', methods=['POST', 'GET'])
 def reestablecer():
-    var = "reestablecer contraseña"
-    return render_template('reestablecer_contraseña.html', var=var)
+    return render_template('Reestablecercontra.html')
 
 @app.route('/registro')
 def registro():
