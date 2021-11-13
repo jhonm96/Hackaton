@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://unpkg.com/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="h-screen overflow-hidden flex items-center justify-center" style="background: #edf2f7;">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+
+
+
+<div class="min-w-screen min-h-screen flex items-center justify-center px-5 py-5">
+    <div class="bg-gray-100 text-gray-00 rounded-3xl shadow-xl w-full overflow-hidden">
+        <div class="md:flex w-full">
+            <div style="background-color:#f5e3ef" class="hidden md:block w-1/2 py-10 px-10">
+                <img src="..//img/Sonidos Estelares (2)-PhotoRoom sin fondo.png" alt="" width="100%" height="auto">
+            </div>
+            <div class="w-full md:w-1/2 py-10 px-5 md:px-10">
+                <div class="text-center mb-10">
+                    <h1 class="font-bold text-3xl text-gray-900">REGISTRO</h1>
+                    <p>Completa la informacion del nuevo producto</p>
+                </div>
+                <div>
+                    <div class="flex -mx-3">
+                        <div class="w-1/2 px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">Nombre</label>
+                            <div class="flex">
+                                <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                                <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" >
+                            </div>
+                         
+                        </div>
+                        <div class="w-1/2 px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">Codigo</label>
+                            <div class="flex">
+                                <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                                <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" >
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="flex -mx-3">
+                        <div class="w-1/2 px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">Tipo de unidad</label>
+                            <div class="flex">
+                                <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                                <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" >
+                            </div>
+                           
+                        </div>
+                        <div class="w-1/2 px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">Fecha de Ingreso</label>
+                            <div class="flex">
+                                <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                                <input type="date" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" >
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="flex -mx-3">
+                        <div class="w-1/2 px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">Porcentage de Promocion</label>
+                            <div class="flex">
+                                <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                                <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" >
+                            </div>
+                            <!-- Fecha de nacimiento <input type="date"> -->
+                        </div>
+                        <div class="w-1/2 px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">Precio unitario</label>
+                            <div class="flex">
+                                <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                                <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" >
+                            </div>
+                        </div>
+                        <div class="w-1/2 px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">Aplica bono de Descuento?</label>
+                            <div class="flex">
+                                <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                                <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="Ej: Si/No">
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="flex -mx-3">
+                        <div class="w-full px-3 mb-5">
+                            <label for="" class="text-xs font-semibold px-1">Cantidad Estandar de Productos X lote</label>
+                            <div class="flex">
+                                <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-email-outline text-gray-400 text-lg"></i></div>
+                                <input type="Texto" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex -mx-3">
+                        <div class="w-full px-3 mb-5">
+                            <button style="background: #b5428f;" class="block w-full max-w-xs mx-auto  hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">REGISTRAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+</body>
+</html>
