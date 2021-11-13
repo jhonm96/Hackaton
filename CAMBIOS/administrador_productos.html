@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Administrar productos</title>
+    <meta name="description" content="description here">
+    <meta name="keywords" content="keywords,here">
+	
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js" integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin="anonymous"></script>
+
+
+</head>
+<body class=" font-sans leading-normal tracking-normal">
+    <nav id="header" class="bg-purple-100 fixed w-full z-10 top-0 shadow">
+	
+
+		<div class="w-full container  bg-purple-100 flex flex-wrap items-center mt-0 md:pb-0">
+				
+			<div class="w-1/2 ">
+                <img style='width:200px' src="..//img/Logorect.png" alt="">
+            </div>
+			<div class="w-1/2 ">
+				<div class="flex relative inline-block float-right">
+				
+				  <div class="relative text-sm text-gray-100">
+					  <button id="userButton" class="flex items-center align-right focus:outline-none mr-3">
+						<img style='width: 50px; height:50px'class="w-8 h-8 rounded-full mr-4 " src="http://i.pravatar.cc/300" alt="Avatar of User"> <span class="hidden md:inline-block font-bold text-purple-600">Hi, Jhon</span>
+						<svg class="pl-2 h-2 fill-current text-gray-100" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129"><g><path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"/></g></svg>
+					  </button>
+					  <div id="userMenu" class="bg-purple-400 rounded shadow-md mt-2 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible">
+						  <ul class="list-reset">
+							<li><hr class="border-t mx-2 border-gray-400"></li>
+							<li><a href="#" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Logout</a></li>
+						  </ul>
+					  </div>
+				  </div>
+
+
+					<div class="block lg:hidden ">
+					<button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-100 hover:border-teal-500 appearance-none focus:outline-none">
+						<svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+					</button>
+				</div>
+				</div>
+
+			</div>
+			
+		</div>
+	</nav>
+    <!--Container-->
+	<div class="flex w-full  mx-auto ">
+
+        <div class=" pt-20 lg:flex  lg:items-top   lg:w-40 hidden lg:block mt-2 lg:mt-0 bg-purple-100   " id="nav-content">
+            <ul class="list-reset lg:flex flex-col items-rigth px-4 md:px-0">
+                <li class="mr-6 my-2 md:my-0">
+                    <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-purple-500 no-underline hover:text-gray-900 border-b-2 border-gray-900 hover:border-blue-400">
+                        <i class="fas fa-home fa-fw mr-3 text-purple-900"></i><span class="pb-1 md:pb-0 text-sm">Home</span>
+                    </a>
+                </li>
+                <li class="mr-6 my-2 md:my-0">
+                    <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-gray-900  hover:border-yellow-300">
+                        <i class="fas fa-tasks fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">listados</span>
+                    </a>
+                </li>
+                <li class="mr-6 my-2 md:my-0">
+                    <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-gray-900  hover:border-red-500">
+                        <i class="fas fa-user-plus mr-3"></i><span class="pb-1 md:pb-0 text-sm">Registro</span>
+                    </a>
+                </li>
+                <li class="mr-6 my-2 md:my-0">
+                    <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-gray-900  hover:border-blue-100">
+                        <i class="fas fa-users-cog mr-3"></i><span class="pb-1 md:pb-0 text-sm">Usuarios</span>
+                    </a>
+                </li>
+                <li class="mr-6 my-2 md:my-0">
+                    <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-gray-900  hover:border-green-400">
+                        <i class="fas fa-cart-plus mr-3"></i><span class="pb-1 md:pb-0 text-sm">Nuevo </span>
+                    </a>
+                </li>
+                <li class="mr-6 my-2 md:my-0">
+                    <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-gray-900  hover:border-green-400">
+                        <i class="fas fa-shopping-cart mr-3"></i><span class="pb-1 md:pb-0 text-sm">Administrar</span>
+                    </a>
+                </li>
+
+            </ul>
+            
+
+            
+        </div>
+		
+		<div class="w-full px-4 md:px-0 pt-20 mb-16 text-gray-800 leading-normal">
+			
+			<!--Console Content-->
+			
+			<div class="flex flex-wrap items-center">
+                <div class="flex flex-wrap w-full mx-3">
+                    <div class="w-1/2 px-3 mb-5">
+                        <label for="" class="text-xs font-semibold px-1">Nombre/Código</label>
+                        <div class="flex">
+                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" placeholder="Ej : Televisor/1234 ">
+                            
+                        </div>
+                        <br>
+                        <div>
+                            <div class="w-full ml-1 ">
+                                <button style="background: #b5428f;" class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">BUSCAR</button>
+                            </div>
+                        </div>
+                        
+                    
+                        <label for="" class="text-xs font-semibold px-1">Tipo de unidad</label>
+                        <div class="flex">
+                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" >
+                        </div>
+                  
+                    
+              
+                    
+                        <label for="" class="text-xs font-semibold px-1">Precio unitario</label>
+                        <div class="flex">
+                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" >
+                        </div>
+                       
+                    
+                    
+                        <label for="" class="text-xs font-semibold px-1">porcentaje de promoción</label>
+                        <div class="flex">
+                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" >
+                        </div>
+                    
+                  
+                    
+                        <label for="" class="text-xs font-semibold px-1">Bono de descuento</label>
+                        <div class="flex">
+                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" placeholder="SÍ/NO">
+                        </div>
+                       
+                    
+                    
+                        <label for="" class="text-xs font-semibold px-1">Cantidad x lote</label>
+                        <div class="flex">
+                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                            <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" >
+                        </div>
+                    
+                    
+
+                    </div>
+                    
+                </div>
+                <div>
+                <div class="flex ">
+                    <div class="w-full px-3 m-10 ml-40">
+                        <button style="background: #b5428f;" class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">ACTUALIZAR</button>
+                    </div>
+                    <div class="w-full px-3 m-10  ">
+                        <button style="background: #b5428f;" class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">ELIMINAR</button>
+                    </div>
+
+                </div>
+                <div>
+                    <a href="#!" class="text-indigo-400 ml-60 text-purple-600 focus:outline-none focus:underline focus:text-indigo-500 dark:focus:border-indigo-800">Crear nuevo producto</a>
+                </div>
+
+            </div>
+
+			<!--Divider-->
+		
+
+            
+								
+			<!--/ Console Content-->
+					
+		</div>
+		
+
+	</div> 
+	<!--/container-->
+	
+
+
+<script>
+	
+	
+	/*Toggle dropdown list*/
+	/*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+
+	var userMenuDiv = document.getElementById("userMenu");
+	var userMenu = document.getElementById("userButton");
+	
+	var navMenuDiv = document.getElementById("nav-content");
+	var navMenu = document.getElementById("nav-toggle");
+	
+	document.onclick = check;
+
+	function check(e){
+	  var target = (e && e.target) || (event && event.srcElement);
+
+	  //User Menu
+	  if (!checkParent(target, userMenuDiv)) {
+		// click NOT on the menu
+		if (checkParent(target, userMenu)) {
+		  // click on the link
+		  if (userMenuDiv.classList.contains("invisible")) {
+			userMenuDiv.classList.remove("invisible");
+		  } else {userMenuDiv.classList.add("invisible");}
+		} else {
+		  // click both outside link and outside menu, hide menu
+		  userMenuDiv.classList.add("invisible");
+		}
+	  }
+	  
+	  //Nav Menu
+	  if (!checkParent(target, navMenuDiv)) {
+		// click NOT on the menu
+		if (checkParent(target, navMenu)) {
+		  // click on the link
+		  if (navMenuDiv.classList.contains("hidden")) {
+			navMenuDiv.classList.remove("hidden");
+		  } else {navMenuDiv.classList.add("hidden");}
+		} else {
+		  // click both outside link and outside menu, hide menu
+		  navMenuDiv.classList.add("hidden");
+		}
+	  }
+	  
+	}
+
+	function checkParent(t, elm) {
+	  while(t.parentNode) {
+		if( t == elm ) {return true;}
+		t = t.parentNode;
+	  }
+	  return false;
+	}
+
+
+</script>
+
+</body>
+</html>
