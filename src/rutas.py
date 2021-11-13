@@ -16,9 +16,13 @@ def inicio():
     var = "inicio"
     return render_template('prueba.html', var=var)
 
-@app.route('/login')
+
+@app.route('/login', methods=['POST', 'GET'])
 def login():
-    return render_template('login.html')
+    if request.method =="GET":
+        return render_template('login.html')
+    else:
+        return("Hola mundo") 
 
 @app.route('/recuperar')
 def recuperar():
