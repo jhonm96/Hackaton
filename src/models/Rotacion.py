@@ -1,6 +1,6 @@
 import peewee
 
-database = peewee.MySQLDatabase('hackaton', host='localhost', port=3306, user='root', password='root')
+import basedatos
 
 class rotacion(peewee.Model):
     id_rotacion = peewee.PrimaryKeyField()
@@ -8,9 +8,9 @@ class rotacion(peewee.Model):
     categoria = peewee.CharField()
     
     class Meta:
-        database = database
+        database = basedatos.obtener_database()
         db_table = 'Rotacion'
 
-if __name__ == '__main__':
+def crearTabla():
     if not rotacion.table_exists():
         rotacion.create_table()

@@ -1,6 +1,6 @@
 import peewee
 
-database = peewee.MySQLDatabase('hackaton', host='localhost', port=3306, user='root', password='root')
+import basedatos
 
 class compra(peewee.Model):
     id_compra = peewee.PrimaryKeyField()
@@ -12,9 +12,9 @@ class compra(peewee.Model):
     precio_total = peewee.IntegerField()
 
     class Meta:
-        database = database
+        database = basedatos.obtener_database()
         db_table = 'Compra'
 
-# if __name__ == '__main__':
-#     if not compra.table_exists():
-#         compra.create_table()
+def crearTabla():
+    if not compra.table_exists():
+        compra.create_table()

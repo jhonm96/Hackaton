@@ -1,6 +1,6 @@
 import peewee
 
-database = peewee.MySQLDatabase('hackaton', host='localhost', port=3306, user='root', password='root')
+import basedatos
 
 class comentarios(peewee.Model):
     id_coment = peewee.PrimaryKeyField()
@@ -12,9 +12,9 @@ class comentarios(peewee.Model):
     
 
     class Meta:
-        database = database
+        database = basedatos.obtener_database()
         db_table = 'Comentarios'
 
-if __name__ == '__main__':
+def crearTabla():
     if not comentarios.table_exists():
         comentarios.create_table()

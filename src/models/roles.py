@@ -1,19 +1,15 @@
 import peewee
 
-database = peewee.MySQLDatabase('hackaton', host='localhost', port=3306, user='root', password='root')
+import basedatos
 
 class role(peewee.Model):
     id_roles = peewee.PrimaryKeyField()
     rol = peewee.CharField()
     
     class Meta:
-        database = database
+        database = basedatos.obtener_database()
         db_table = 'Roles'
 
-if __name__ == '__main__':
-    if not role.table_exists():
-        role.create_table()
-
-if __name__ == '__main__':
+def crearTabla():
     if not role.table_exists():
         role.create_table()

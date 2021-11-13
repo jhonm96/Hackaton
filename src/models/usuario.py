@@ -1,8 +1,8 @@
 import peewee
 
-database = peewee.MySQLDatabase('hackaton', host='localhost', port=3306, user='root', password='root')
+import basedatos
 
-class usuario(peewee.Model):
+class Usuario(peewee.Model):
     id_usuario = peewee.PrimaryKeyField()
     cedula = peewee.CharField(max_length=50, unique=True)
     nombre = peewee.CharField(max_length=50)
@@ -20,9 +20,9 @@ class usuario(peewee.Model):
     role = peewee.IntegerField()
 
     class Meta:
-        database = database
-        db_table = 'Usuario'
+        database = basedatos.obtener_database()
+        db_table = 'usuario'
 
-if __name__ == '__main__':
-    if not usuario.table_exists():
-        usuario.create_table()
+def crearTabla():
+    if not Usuario.table_exists():
+        Usuario.create_table()
