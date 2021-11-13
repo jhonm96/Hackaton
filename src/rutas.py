@@ -24,10 +24,10 @@ def login():
 @app.route('/recuperar')
 def recuperar():
     var = "recuperar contraseña"
-    email="jsaboya@gmail.com"
+    email="jsaboya@uninorte.edu.co"
     yag = yagmail.SMTP('misionticuninorte@gmail.com', 'Mi$ionTic2022') 
     yag.send(to=email, subject='Recupera tu contraseña',
-    contents='Bienvenido,\n a continuacion te presento tu informacion:\nantiguo password:prueba\ningresa en este link /reestablecer')
+    contents='Bienvenido,\n a continuación te presento tu información para que puedas iniciar sesión:\n antiguo password : prueba\ningresa en este link:\nhttp://127.0.0.1:5000/reestablecer')
     flash('Revisa tu correo para activar tu cuenta')  
     return render_template('prueba.html', var=var)
 
@@ -108,7 +108,7 @@ def adminusuarios():
     return render_template('prueba.html', var=var)
 
 @app.route('/admin/listados-clientes')
-def adminusuarios():
+def adminlisclientes():
     var = "admin listados de clientes"
     return render_template('prueba.html', var=var)
 
