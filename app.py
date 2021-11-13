@@ -11,12 +11,12 @@ app = Flask(__name__)
 paginasConAutenticacion = ['home']
 paginasSinAutenticacion = ['login', 'registro']
 
-@app.before_request
-def before_request():
-    if 'usuario' not in session and request.endpoint in paginasConAutenticacion:
-        return redirect('/login')
-    if 'usuario' in session and request.endpoint in paginasSinAutenticacion:
-        return redirect('/home')
+# @app.before_request
+# def before_request():
+#     if 'usuario' not in session and request.endpoint in paginasConAutenticacion:
+#         return redirect('/login')
+#     if 'usuario' in session and request.endpoint in paginasSinAutenticacion:
+#         return redirect('/home')
 
 
 
@@ -27,8 +27,7 @@ def home():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    Modelo.registroProducto('producto_X', 'inventario_x', 'bolsa', 1500, 0)
-    return render_template('index.html')
+    return render_template('login.html')
 
 @app.route('/registro', methods=['GET', 'POST'])
 def registro():
