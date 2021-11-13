@@ -18,8 +18,7 @@ def inicio():
 
 @app.route('/login')
 def login():
-    var = "login"
-    return render_template('inicio_sesion.html', var=var)
+    return render_template('login.html')
 
 @app.route('/recuperar')
 def recuperar():
