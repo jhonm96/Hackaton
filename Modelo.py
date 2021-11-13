@@ -45,7 +45,7 @@ class ProductoLote(Model):
     cod_prod = ForeignKeyField(Producto, related_name='cod_prod')
     id_lote = ForeignKeyField(Lote, related_name='id_lote')
     cant_act_lote = IntegerField()
-    fecha_ingreso = DateField(defaul = datetime.date.today())
+    fecha_ingreso = DateTimeField(defaul = datetime.datetime.now())
     fecha_ultima_venta = DateField()
 
     class Meta:
@@ -60,7 +60,7 @@ class ProductosBaja(Model):
     id_prodBaja = PrimaryKeyField()
     cod_prod = ForeignKeyField(Producto, related_name='cod_prod')
     lote = ForeignKeyField(Lote, related_name='id_lote')
-    fecha_baja = DateField()
+    fecha_baja = DateTimeField()
     num_ventas = IntegerField()
     valor_total_ventas = DoubleField()
     razon = CharField()
@@ -95,12 +95,11 @@ class Usuario(Model):
     fecha_nac = DateField()
     direccion = CharField(max_length=250)
     ciudad = CharField(max_length=250)
-    acum_compras = DoubleField()
-    n_bonos = IntegerField()
+    acum_compras = DoubleField(default=0)
+    n_bonos = IntegerField(default=0)
     username = CharField(max_length=50)
     email = CharField(max_length=250, unique=True)
     password = CharField(max_length=250)
-    cargo = CharField(max_length=250)
     role = CharField(max_length=50, default='usuario externo')
 
     class Meta:
@@ -142,7 +141,7 @@ class ComprasUsuario(Model):
 
 class Carrito(Model):
     id_carrito = PrimaryKeyField()
-    # id_usuario = peewee.ForeignKeyField(Usuario, backref='id_usuarios')
+    id_usuario = ForeignKeyField(Usuario, related_name='id_usuarios')
     id_usuario = CharField()
     cod_prod = CharField()
     precio_und = IntegerField()
@@ -156,20 +155,39 @@ class Carrito(Model):
         if not Carrito.table_exists():
             Carrito.create_table()
 
-
-
-
-
-
 def crearTablas():
-    Usuario.crearTabla()
     Producto.crearTabla()
+    Lote.crearTabla()
+    ProductoLote.crearTabla()
+    ProductosBaja.crearTabla()
+    RotacionProducto.crearTabla()
+    Usuario.crearTabla()
+    Compra.crearTabla()
     ComprasUsuario.crearTabla()
     Carrito.crearTabla()
-    Compra.crearTabla()
-    ProductosBaja.crearTabla()
-    ProductoLote.crearTabla()
-    Lote.crearTabla()
-    RotacionProducto.crearTabla()
-    ComprasUsuario.crearTabla()
+    
+def registrar(usuario, contrraseña, email, nombre, apellido, cedula, sexo, fecha_nac, direccion, ciudad):
+    try:
+        Usuario.create(
+            username = usuario,
+            password = contrraseña,
+            email = email,
+            nombre = nombre,
+            apellido = apellido,
+            cedula = cedula,
+            sexo = sexo,
+            fecha_nac = fecha_nac,
+            direccion = direccion,
+            ciudad = ciudad)
+        Usuario.save()
+        return True
+    except:
+        return False
+
+    
+
+print(registrar('juan', '123', 'juan@123', 'Juan', 'Perez', '123456789', 'M', '1990-01-01', 'Calle 123', 'Bogota')
+)
+
+    
     

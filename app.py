@@ -1,16 +1,55 @@
-from flask import Flask
-import Modelo
-# from Modelo import Usuario, Producto, crearTablas
+from flask import Flask, render_template, request, redirect, session
+import Modelo, werkzeug.security as ws
+
 
 
 app = Flask(__name__)
 
+paginasConAutenticacion = ['home']
+paginasSinAutenticacion = ['login', 'registro']
+
+@app.before_request
+def before_request():
+    if 'usuario' not in session and request.endpoint in paginasConAutenticacion:
+        return redirect('/login')
+    if 'usuario' in session and request.endpoint in paginasSinAutenticacion:
+        return redirect('/home')
+
+
+
 @app.route('/')
-def hello():
-    return 'Hello World!'
+@app.route('/home')
+def home():
+    return render_template('home.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    return render_template('index.html')
+
+@app.route('/registro', methods=['GET', 'POST'])
+def registro():
+    if request.method == 'GET':
+        return render_template('registro.html')
+    else:
+        username = request.form['username']
+        cedula = request.form['cedula']
+        nombre = request.form['nombre']
+        apellido = request.form['apellido']
+        email = request.form['email']
+        sexo = request.form['sexo']
+        fechaNacimiento = request.form['fecha_nac']
+        direccion = request.form['direccion']
+        ciudad = request.form['ciudad']
+        password = request.form['password']
+        ver_password = request.form['ver_password']
+        if password == ver_password:
+            Modelo.registrar(username, ws.generate_password_hash(password), email, nombre, apellido, cedula, sexo, fechaNacimiento, direccion, ciudad)
+            return redirect('/login')
+        else:
+            return render_template('registro.html')
 
 if __name__ == '__main__':
+    app.run(debug=True, port='8000')
     Modelo.crearTablas()
-    app.run(debug=True, host='80')
 
     
