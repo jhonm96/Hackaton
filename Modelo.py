@@ -45,7 +45,7 @@ class ProductoLote(Model):
     cod_prod = ForeignKeyField(Producto, related_name='cod_prod')
     id_lote = ForeignKeyField(Lote, related_name='id_lote')
     cant_act_lote = IntegerField()
-    fecha_ingreso = DateTimeField(defaul = datetime.datetime.now())
+    # fecha_ingreso = DateTimeField(defaul = datetime.datetime.now())
     fecha_ultima_venta = DateField()
 
     class Meta:
@@ -167,7 +167,6 @@ def crearTablas():
     Carrito.crearTabla()
     
 def registrar(usuario, contrraseña, email, nombre, apellido, cedula, sexo, fecha_nac, direccion, ciudad):
-    try:
         Usuario.create(
             username = usuario,
             password = contrraseña,
@@ -180,9 +179,7 @@ def registrar(usuario, contrraseña, email, nombre, apellido, cedula, sexo, fech
             direccion = direccion,
             ciudad = ciudad)
         Usuario.save()
-        return True
-    except:
-        return False
+
 
     
 
