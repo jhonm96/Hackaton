@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADMINISTRACION DE CLIENTES</title>
-</head>
+% extends "Basedashboard.html"%
+{% block titulo %}
+<title>Admin/Clientes</title>
+{% endblock %}
 <body>
-    <fieldset>
+    <form>
         <h1>Administración de CLIENTES</h1>
         <input type="text" placeholder="Nombre/ID">
         <button>Buscar</button>
@@ -48,7 +44,7 @@
         <button>Actualizar</button>
         <button>Eliminar</button>
 
-    </fieldset>
+    </form>
     
 </body>
 </html>

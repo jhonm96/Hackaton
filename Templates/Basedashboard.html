@@ -8,66 +8,50 @@
     {% endblock %}
 
     {% block estilos %}
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     {% endblock %}
 </head>
 <body>
-   <header class="header">
-        <div class=cuerpoheader>
-            <div class="logoH">
-                <img src="/img/logorect.png" alt="">
+   <header class=" container content-end bg-purple-100 ">
+        <div class="flex justify-between flex-wrap  gap-2">
+            <div class="logoH flex-1">
+                <img class="w-40" src="/img/logorect.png" alt="">
             </div>
-            <div>
-                <div class="logouser">
-                    <img src="/img/user-solid.svg" alt="">
-               </div>
-               <div>
-                   <p>Nombre</p>
-               </div>
+            <div class=" flex flex-wrap  flex-col  justify-end mb-1">
+                <div class="flex">
+                    <img src="/img/user-solid.svg" alt="" class="w-5 flex-1 ">
+                </div>
+            <div class="">
+                <p class="text-xs font-bold">Nombre</p>
             </div>
-            <div>
-                <div class="logocerrar">
-                     <img src="/img/power-off-solid.svg" alt="">
+            </div>
+            <div class="flex flex-wrap  flex-col  justify-end mb-0.5">
+                <div class="flex ">
+                    <img src="/img/power-off-solid.svg" alt="" class="w-5 flex-1">
                 </div>
                 <div>
-                    <a href="">Cerrar Sesion</a>
-                </div>
-            </div>
+                <a class='text-xs font-bold' href="">Cerrar Sesion</a>
+                </div></div>
         </div>
     </header>
 
-    <section>
-        <div>
-            <div>
-                <div>
-                    <img src="/img/home-solid.svg" alt="">
-                </div>
-                <div>
-                    <a href="">HOME</a>
-                </div>
+    <section class=" w-40 h-full  bg-purple-100 container" >
+        <div class="flex flex-col flex-wrap content-end gap-4 p-5  ">
+            <div class='flex flex-wrap content-end '>
+                    <img class='w-5'src="/img/home-solid.svg" alt="">
+                    <a class='align-bottom' href="">HOME</a>
             </div>
-            <div>
-                <div>
-                    <img src="/img/user-solid.svg" alt="">
-                </div>
-                <div>
+            <div class='flex flex-wrap content-end '>
+                    <img class='w-5'src="/img/user-solid.svg" alt="">
                     <a href="">USUARIOS</a>
-                </div>
             </div>
-            <div>
-                <div>
-                    <img src="/img/shopping-cart-solid.svg" alt="">
-                </div>
-                <div>
+            <div class='flex flex-wrap content-end '>
+                    <img class='w-5'src="/img/shopping-cart-solid.svg" alt="">
                     <a href="">PRODUCTOS</a>
-                </div>
             </div>
-            <div>
-                <div>
-                    <img src="/img/list-ul-solid.svg" alt="">
-                </div>
-                <div>
+            <div class='flex flex-wrap content-end '>
+                    <img class='w-5'src="/img/list-ul-solid.svg" alt="">
                     <a href="">LISTADOS</a>
-                </div>
             </div>
         </div>
     </section>
@@ -78,3 +62,7 @@
 {% block scripts %}
 {% endblock %}
 </html>
+
+
+
+
