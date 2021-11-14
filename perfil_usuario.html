@@ -6,96 +6,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
-    <title>Document</title>
+    <title>Perfil de usuario</title>
 </head>
 <body>
     
-    <div class="bg-white block py-10">
-        <div class="max-w-2xl mx-auto">
-            <!--
-                ! ------------------------------------------------------------
-                ! Profile banner and avatar
-                ! ------------------------------------------------------------
-                !-->
-            <div class="w-full">
-                <div class="w-full bg-pink-600 h-48 rounded-t-lg">
-                    <font color="white" size="4" face="Comic Sans MS">PERFIL DE USUARIO</font>
-                </div>
-                <div class="absolute -mt-20 ml-5">
-                    <div class="bg-gray-200 border border-gray-300 h-34 w-40 rounded-lg shadow-md border-b border-primary">
-                        <img src="/resources/fotos-perfil-whatsapp_16.jpg" alt="">
-                    </div>
-                </div>
-            </div>
     
-            <!--
-                ! ------------------------------------------------------------
-                ! Profile general information
-                ! ------------------------------------------------------------
-                !-->
-            <div class="bg-primary border border-primary rounded-b-lg p-5 pt-20 flex flex-col">
-                <div class="mb-1 bg-gray-200 border border-gray-300 h-5 w-40">
-                    <font color="black" size="4" face="Comic Sans MS">Dylan Barajas</font>
-                </div>
-                <div class="mb-1 bg-gray-200 border border-gray-300 h-5 w-96">
-                    <font color="black" size="4" face="Comic Sans MS">1005519328</font>
-                </div>
-                <div class="text-sm mt-2 text-black-200">
-                    <div class="flex flex-row ml-auto space-x-2 items-center">
-                        <div class="mb-1 bg-gray-200 border border-gray-300 h-5 w-20">
-                            <label for="">
-                                <font color="black" size="4" face="Comic Sans MS">19/02/</font>
-                            </label>
-                        </div>
-                        <div class="bg-blue-200 rounded-full h-1 w-1"></div>
-                        <div class="mb-1 bg-gray-200 border border-gray-300 h-5 w-20">
-                            <font color="black" size="4" face="Comic Sans MS">2021</font>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="pt-8 flex gap-8">
-                    <div class="flex flex-col">
-                        <div class="mb-1 bg-gray-200 border border-gray-300 h-5 w-20">
-                            <font color="black" size="4" face="Comic Sans MS">Calle</font>                        </div>
-                        <div class="mb-1 bg-gray-200 border border-gray-300 h-5 w-20">
-                            <font color="black" size="4" face="Comic Sans MS">30</font>                        </div>
-                    </div>
-                    <div class="flex flex-col">
-                        <div class="mb-1 bg-gray-200 border border-gray-300 h-5 w-20">
-                            <font color="black" size="4" face="Comic Sans MS">Carrera</font>                        </div>
-                        <div class="mb-1 bg-gray-200 border border-gray-300 h-5 w-20">
-                            <font color="black" size="4" face="Comic Sans MS">19</font>                        </div>
-                    </div>
-                    <div class="flex flex-col">
-                        <div class="mb-1 bg-gray-200 border border-gray-300 h-5 w-20">
-                            <font color="black" size="4" face="Comic Sans MS">#</font>                        </div>
-                        <div class="mb-1 bg-gray-200 border border-gray-300 h-5 w-20">
-                            <font color="black" size="4" face="Comic Sans MS">40</font>                        </div>
-                    </div>
-                    <div class="flex flex-col">
-                        <div class="mb-1 bg-gray-200 border border-gray-300 h-5 w-20">
-                            <font color="black" size="4" face="Comic Sans MS">Sexo</font>                        </div>
-                        <div class="mb-1 bg-gray-200 border border-gray-300 h-5 w-20">
-                            <font color="black" size="4" face="Comic Sans MS">M</font>                        </div>
-                    </div>
-                </div>
-                <div class="py-5 break-all bbcode">
-                    <div class="mb-1 bg-gray-200 border border-gray-300 h-5 w-48">
-                        <font color="black" size="4" face="Comic Sans MS">Santa Marta,Colombia</font>                    </div>
-                    <br>
-                    <div class="mb-1 bg-gray-200 border border-gray-300 h-5 w-full h-40">
-                        <br>
-                        <font color="black" size="4" face="Comic Sans MS">Acumulado de compras:</font>
-                        <input type="text">
-                        <br>
-                        <br>
-                        <font color="black" size="4" face="Comic Sans MS">Numero de bonos de descuento acumulados:</font>
-                        <input type="text">
-                    </div>
+<section class="h-screen bg-gray-100 bg-opacity-50">
+    <form class="container max-w-2xl mx-auto shadow-md md:w-3/4">
+        <div class="p-4 bg-gray-100 border-t-2 border-indigo-400 rounded-lg bg-opacity-5">
+            <div class="max-w-sm mx-auto md:w-full md:mx-0">
+                <div class="inline-flex items-center space-x-4">
+                    <a href="#" class="block relative">
+                        <img alt="profil" src="/resources/fotos-perfil-whatsapp_16.jpg" class="mx-auto object-cover rounded-full h-16 w-16 "/>
+                    </a>
+                    <h1 class="text-gray-600">
+                        Charlie
+                    </h1>
                 </div>
             </div>
         </div>
+        <div class="space-y-6 bg-white">
+            <div class="items-center w-full p-4 space-y-4 text-gray-500 md:inline-flex md:space-y-0">
+                <h2 class="max-w-sm mx-auto md:w-1/3">
+                    Informacion de perfil
+                </h2>
+                <div class="max-w-sm mx-auto md:w-2/3">
+                    <div class=" relative ">
+                        <input type="text" id="user-info-email" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Nombre y apellido"/>
+                        <br>
+                        <br>
+
+                        <div class=" relative ">
+                            <input placeholder="Cédula" type="text" id="user-info-phone" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"/>
+                            <br>
+                            <br>
+                            <div class=" relative ">
+                                <input placeholder="Sexo" type="text" id="user-info-phone" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"/>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <div class="items-center w-full p-4 space-y-4 text-gray-500 md:inline-flex md:space-y-0">
+                    <h2 class="max-w-sm mx-auto md:w-1/3">
+                        
+                    </h2>
+                    <div class="max-w-sm mx-auto space-y-5 md:w-2/3">
+                        <div>
+                            <div class=" relative ">
+                                <input type="text" id="user-info-name" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Ciudad"/>
+                                </div>
+                            </div>
+                            <div>
+                                <div class=" relative ">
+                                    <input type="text" id="user-info-phone" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Dirección"/>
+                                    </div>
+                                </div>
+                                <div class=" relative ">
+                                    <label for="">Fecha de nacimiento</label>
+                                    <input type="date" id="user-info-phone" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"/>
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+                        </div>
+                        <hr/>
+                        <div class="items-center w-full p-8 space-y-4 text-gray-500 md:inline-flex md:space-y-0">
+                            <h2 class="max-w-sm mx-auto md:w-4/12">
+                                Acumulados
+                            </h2>
+                            <div class="w-full max-w-sm pl-2 mx-auto space-y-5 md:w-5/12 md:pl-9 md:inline-flex">
+                                <div class=" relative ">
+                                    <label for="">Acumulado de compras</label>
+                                    <input type="text" id="user-info-password" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"  readonly/>
+                                    <br>
+                                    <br>
+                                    <label for="">Numero de bonos</label>
+                                    <input type="text" id="user-info-password" class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"  readonly/>
+
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                            <hr/>
+                            
+                        </div>
+                    </form>
+                </section>
+
     
 </body>
 </html>
