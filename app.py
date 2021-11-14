@@ -243,7 +243,7 @@ def perfil():
 
 @app.route('/administrarproducto')
 def administrarproducto():
-    return render_template('administrarproducto.html')
+    return render_template('Dashadmin_producto.html')
 
 @app.route('/buscar')
 def buscar():
