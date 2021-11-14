@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inicio de Sesion</title>
+    <link href="https://unpkg.com/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="h-screen overflow-hidden flex  items-center justify-center" style="background: #f3f4f6;">
+
+<div class="flex flex-col items-center rounded-md min-h-20 overflow-hidden bg-white shadow-lg dark:bg-gray-900">
+    <img style='width:400px' class='-my-10'src="{{ url_for('static', filename='img/Sonidos Estelares (2)-PhotoRoom sin fondo.png') }}" alt="">
+    <div class="container mx-auto">
+        <div class="max-w-md mx-auto ">
+            <div class="text-center">
+                <h1 class="my-3 text-3xl font-semibold text-gray-700 dark:text-gray-200">INICIO DE SESION</h1>
+                <p class="text-gray-500 dark:text-gray-400">Inicia Sesion en Tu Cuenta</p>
+            </div>
+            <div class="m-7">
+                <form action="/login" method="post">
+                    <div class="mb-6">
+                        <label for="email" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Correo Electronico</label>
+                        <input type="email" name="email" id="email" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-2">
+                            <label for="password" class="text-sm text-gray-600 dark:text-gray-400">Contraseña</label>
+                            <a href="/recuperar" class="text-sm text-gray-400 focus:outline-none focus:text-indigo-500 hover:text-indigo-500 dark:hover:text-indigo-300">Olvidaste tu Contraseña?</a>
+                        </div>
+                        <input type="password" name="password" id="password" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                    </div>
+                    <div class="mb-6">
+                        <input type="submit" class="w-full px-3 py-4 text-white bg-indigo-400 rounded-md hover:bg-indigo-600 focus:outline-none" />
+                    </div>
+                    <p class="text-sm text-center text-gray-400">Aun no tienes una Cuenta? <a href="/registro" class="text-indigo-400 text-purple-600 focus:outline-none focus:underline focus:text-indigo-500 dark:focus:border-indigo-800">Registrate</a>.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</body>
+</html>

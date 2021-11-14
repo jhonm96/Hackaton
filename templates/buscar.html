@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" />
+    <!--Replace with your tailwind.css once created-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Define your gradient here - use online tools to find a gradient matching your branding-->
+    <style>
+        .gradient {
+            background: linear-gradient(90deg, #B5428E 0%, #d12bbbe5 100%);
+        }
+    </style>
+
+</head>
+
+<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+
+
+    <!--Nav-->
+    <nav id="header "
+        class=" w-full z-30 top-0 text-white bg-gradient-to-r  from-purple-400 via-purple-500 to-pink-500 container mx-auto">
+        <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+            <div class="pl-4 flex items-center">
+                <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
+                    href="#">
+                    <!--Icon from: http://www.potlabicons.com/ -->
+
+                    Orion Delivery
+                </a>
+            </div>
+            <div class="block lg:hidden pr-4">
+                <button id="nav-toggle"
+                    class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                    <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Ofertas</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20"
+                id="nav-content">
+                <ul class="list-reset lg:flex justify-end flex-1 items-center">
+
+                    <li class="mr-3">
+                        <div class="relative text-gray-600">
+                            <input type="search" name="serch" placeholder="Buscar un producto"
+                                class="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none">
+                            <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
+                                <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                                    viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;"
+                                    xml:space="preserve" width="512px" height="512px">
+                                    <path
+                                        d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    <li class="mr-3">
+                        <a class="  hover:underline hover:text-purple-600 p-4 px-3 sm:px-4 inline-block font-bold no-underline"
+                            href="#">Ofertas</a>
+                    </li>
+
+                    <li class="mr-3">
+                        <a class="  hover:underline hover:text-purple-600 p-4 px-3 sm:px-4 inline-block font-bold no-underline"
+                            href="#">Hombre</a>
+                    </li>
+                    <li class="mr-3">
+                        <a class=" hover:underline hover:text-purple-600 p-4 px-3 sm:px-4 inline-block font-bold no-underline"
+                            href="#">Mujer</a>
+                    </li>
+                    <li class="mr-3">
+                        <a class=" hover:underline hover:text-purple-600 p-4 px-3 sm:px-4 inline-block font-bold no-underline"
+                            href="#">Tecnología</a>
+                    </li>
+
+                </ul>
+
+                <button id="navAction"
+                    class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow  focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                </button>
+
+                <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+                <div x-data="{ cartOpen: false , isOpen: false }" class="">
+                    <header>
+                        <div class="container mx-auto px-6 py-3">
+                            <div class="flex items-center justify-between">
+                                <div class="hidden w-full text-gray-600 md:flex md:items-center">
+                                </div>
+                                <div class="flex items-center justify-end w-full ">
+                                    <button @click="cartOpen = !cartOpen"
+                                        class="text-gray-600 focus:outline-none mx-2 sm:mx-0  mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow  focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                                        <svg class="h-5 w-5 " fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path
+                                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                                            </path>
+                                        </svg>
+                                    </button>
+                                </div>
+                    </header>
+                    <div :class="cartOpen ? 'translate-x-0 ease-out' : 'translate-x-full ease-in'"
+                        class="fixed right-0 top-0 max-w-xs w-full h-full px-6 py-4 transition duration-300 transform overflow-y-auto bg-white border-l-2 border-gray-300">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-2xl font-medium text-gray-700">Tu carrito</h3>
+                            <button @click="cartOpen = !cartOpen" class="text-gray-600 focus:outline-none">
+                                <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <hr class="my-3">
+                        <div class="flex justify-between mt-6">
+                            <div class="flex">
+                                <img class="h-20 w-20 object-cover rounded"
+                                    src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80"
+                                    alt="">
+                                <div class="mx-3">
+                                    <h3 class="text-sm text-gray-600">Mac Book Pro</h3>
+                                    <div class="flex items-center mt-2">
+                                        <button class="text-gray-500 focus:outline-none focus:text-gray-600">
+                                            <svg class="h-5 w-5" fill="none" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                                stroke="currentColor">
+                                                <path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                        <span class="text-gray-700 mx-2">2</span>
+                                        <button class="text-gray-500 focus:outline-none focus:text-gray-600">
+                                            <svg class="h-5 w-5" fill="none" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                                stroke="currentColor">
+                                                <path d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="text-gray-600">$20.000</span>
+                        </div>
+                        <div class="flex justify-between mt-6">
+                            <div class="flex">
+                                <img class="h-20 w-20 object-cover rounded"
+                                    src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80"
+                                    alt="">
+                                <div class="mx-3">
+                                    <h3 class="text-sm text-gray-600">Mac Book Pro</h3>
+                                    <div class="flex items-center mt-2">
+                                        <button class="text-gray-500 focus:outline-none focus:text-gray-600">
+                                            <svg class="h-5 w-5" fill="none" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                                stroke="currentColor">
+                                                <path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                        <span class="text-gray-700 mx-2">2</span>
+                                        <button class="text-gray-500 focus:outline-none focus:text-gray-600">
+                                            <svg class="h-5 w-5" fill="none" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                                stroke="currentColor">
+                                                <path d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="text-gray-600">$2.000</span>
+                        </div>
+                        <div class="flex justify-between mt-6">
+                            <div class="flex">
+                                <img class="h-20 w-20 object-cover rounded"
+                                    src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80"
+                                    alt="">
+                                <div class="mx-3">
+                                    <h3 class="text-sm text-gray-600">Mac Book Pro</h3>
+                                    <div class="flex items-center mt-2">
+                                        <button class="text-gray-500 focus:outline-none focus:text-gray-600">
+                                            <svg class="h-5 w-5" fill="none" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                                stroke="currentColor">
+                                                <path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                        <span class="text-gray-700 mx-2">2</span>
+                                        <button class="text-gray-500 focus:outline-none focus:text-gray-600">
+                                            <svg class="h-5 w-5" fill="none" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                                stroke="currentColor">
+                                                <path d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="text-gray-600">20$</span>
+                        </div>
+                        <div class="mt-8">
+                            <form class="flex items-center justify-center">
+                                <input class="form-input w-48" type="text" placeholder="Bono de descuento">
+                                <button
+                                    class="ml-3 flex items-center px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                                    <span>Aplicar</span>
+                                </button>
+                            </form>
+                        </div>
+                        <a
+                            class="flex items-center justify-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                            <span>¡Pagar!</span>
+                            <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+    </nav> <!-- Finaliza NAV -->
+
+    
+
+    <main class="mt-2">
+        <section class="bg-white dark:bg-gray-900">
+            <div class="container px-6 py-8 mx-auto">
+                <div class="lg:flex lg:-mx-2">
+                    <div class="space-y-3 lg:w-1/5 lg:px-2 lg:space-y-4">
+                        <a href="#" class="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Jackets &
+                            Coats</a>
+                        <a href="#"
+                            class="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Hoodies</a>
+                        <a href="#" class="block font-medium text-blue-600 dark:text-blue-500 hover:underline">T-shirts
+                            &
+                            Vests</a>
+                        <a href="#"
+                            class="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Shirts</a>
+                        <a href="#" class="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Blazers &
+                            Suits</a>
+                        <a href="#" class="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Jeans</a>
+                        <a href="#"
+                            class="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Trousers</a>
+                        <a href="#"
+                            class="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Shorts</a>
+                        <a href="#"
+                            class="block font-medium text-gray-500 dark:text-gray-300 hover:underline">Underwear</a>
+                    </div>
+
+                    <div class="mt-6 lg:mt-0 lg:px-2 lg:w-4/5 ">
+                        <div class="flex items-center justify-between text-sm tracking-widest uppercase ">
+                            <p class="text-gray-500 dark:text-gray-300">n Productos</p>
+                            <div class="flex items-center">
+                                <p class="text-gray-500 dark:text-gray-300">Ordenar por </p>
+                                <select
+                                    class="font-medium text-gray-700 ml-2 bg-transparent dark:text-gray-500 focus:outline-none">
+                                    <option value="#">Destacados</option>
+                                    <option value="#">Mayor precio a Menor precio </option>
+                                    <option value="#">Menor precio a Mayor precio</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                            <div class="flex flex-col items-center justify-center w-full max-w-lg mx-auto">
+                                <img class="object-cover w-full rounded-md h-72 xl:h-80"
+                                    src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80"
+                                    alt="T-Shirt">
+                                <h4 class="mt-2 text-lg font-medium text-gray-700 dark:text-gray-200">Printed T-shirt
+                                </h4>
+                                <p class="text-blue-500">$12.55</p>
+
+                                <button
+                                    class="flex items-center justify-center w-full px-2 py-2 mt-4 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mx-1" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path
+                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                                    </svg>
+                                    <span class="mx-1">Add to cart</span>
+                                </button>
+                            </div>
+
+                            <div class="flex flex-col items-center justify-center w-full max-w-lg mx-auto">
+                                <img class="object-cover w-full rounded-md h-72 xl:h-80"
+                                    src="https://images.unsplash.com/photo-1620799139507-2a76f79a2f4d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=966&q=80"
+                                    alt="T-Shirt">
+                                <h4 class="mt-2 text-lg font-medium text-gray-700 dark:text-gray-200"> Slub jersey
+                                    T-shirt
+                                </h4>
+                                <p class="text-blue-500">$18.70</p>
+
+                                <button
+                                    class="flex items-center justify-center w-full px-2 py-2 mt-4 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mx-1" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path
+                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                                    </svg>
+                                    <span class="mx-1">Add to cart</span>
+                                </button>
+                            </div>
+
+                            <div class="flex flex-col items-center justify-center w-full max-w-lg mx-auto">
+                                <img class="object-cover w-full rounded-md h-72 xl:h-80"
+                                    src="https://images.unsplash.com/photo-1603320409990-02d834987237?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                                    alt="T-Shirt">
+                                <h4 class="mt-2 text-lg font-medium text-gray-700 dark:text-gray-200">T-shirt with a
+                                    motif
+                                </h4>
+                                <p class="text-blue-500">$16.55</p>
+
+                                <button
+                                    class="flex items-center justify-center w-full px-2 py-2 mt-4 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mx-1" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path
+                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                                    </svg>
+                                    <span class="mx-1">Add to cart</span>
+                                </button>
+                            </div>
+
+                            <div class="flex flex-col items-center justify-center w-full max-w-lg mx-auto">
+                                <img class="object-cover w-full rounded-md h-72 xl:h-80"
+                                    src="https://images.unsplash.com/photo-1603320410149-db26b12d5c2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80"
+                                    alt="T-Shirt">
+                                <h4 class="mt-2 text-lg font-medium text-gray-700 dark:text-gray-200">Art T-shirt</h4>
+                                <p class="text-blue-500">$12.55</p>
+
+                                <button
+                                    class="flex items-center justify-center w-full px-2 py-2 mt-4 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mx-1" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path
+                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                                    </svg>
+                                    <span class="mx-1">Add to cart</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Promociones -->
+    <!-- <section class="container  p-6 mx-auto bg-white dark:bg-gray-800">
+        <h2 class="text-xl font-medium text-gray-800 capitalize dark:text-white md:text-2xl">Marcas Top</h2>
+
+        <div class="flex items-center justify-center">
+            <div class="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                <div class="w-full max-w-xs text-center ">
+                    <img class="object-cover object-center w-full h-48 mx-auto rounded-lg" src="https://logos-marcas.com/wp-content/uploads/2020/07/Asus-Logo.png" alt="avatar"/>
+
+                    <div class="mt-2">
+                        <h3 class="text-lg font-medium text-gray-700 dark:text-gray-200">ASUS</h3>
+                        
+                    </div>
+                </div>
+
+                <div class="w-full max-w-xs text-center">
+                    <img class="object-cover object-center w-full h-48 mx-auto rounded-lg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/1200px-HP_logo_2012.svg.png" alt="avatar"/>
+
+                    <div class="mt-2">
+                        <h3 class="text-lg font-medium text-gray-700 dark:text-gray-200">HP</h3>
+                        
+                    </div>
+                </div>
+
+                <div class="w-full max-w-xs text-center">
+                    <img class="object-cover object-center w-full h-48 mx-auto rounded-lg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Dell_Logo.svg/1200px-Dell_Logo.svg.png" alt="avatar"/>
+
+                    <div class="mt-2">
+                        <h3 class="text-lg font-medium text-gray-700 dark:text-gray-200">DELL</h3>
+                        
+                    </div>
+                </div>
+
+                <div class="w-full max-w-xs text-center">
+                    <img class="object-cover object-center w-full h-48 mx-auto rounded-lg" src="https://logos-marcas.com/wp-content/uploads/2020/11/MSI-Logo.png" alt="avatar"/>
+
+                    <div class="mt-2">
+                        <h3 class="text-lg font-medium text-gray-700 dark:text-gray-200">MSI</h3>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+    <div class="bg-gray-100 rounded">
+        <section class="text-gray-600 body-font">
+            <div class="container px-5 py-24 mx-auto">
+                <div class="flex flex-wrap -m-4">
+                    <div class="p-4 md:w-1/3">
+                        <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+
+                            <div class="p-6">
+                                <section>
+
+                                    <div
+                                        class="flex max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                                        <div class="w-1/3 bg-cover"
+                                            style="background-image: url('https://images.unsplash.com/photo-1494726161322-5360d4d0eeae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80')">
+                                        </div>
+
+                                        <div class="w-2/3 p-4 md:p-4">
+                                            <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Backpack</h1>
+
+                                            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Lorem ipsum dolor
+                                                sit amet consectetur adipisicing elit In odit</p>
+
+                                            <div class="flex mt-2 item-center">
+                                                <svg class="w-5 h-5 text-gray-700 fill-current dark:text-gray-300"
+                                                    viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                                                </svg>
+
+                                                <svg class="w-5 h-5 text-gray-700 fill-current dark:text-gray-300"
+                                                    viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                                                </svg>
+
+                                                <svg class="w-5 h-5 text-gray-700 fill-current dark:text-gray-300"
+                                                    viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                                                </svg>
+
+                                                <svg class="w-5 h-5 text-gray-500 fill-current" viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                                                </svg>
+
+                                                <svg class="w-5 h-5 text-gray-500 fill-current" viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                                                </svg>
+                                            </div>
+
+                                            <div class="flex justify-between mt-3 item-center">
+                                                <h1
+                                                    class="text-lg font-bold text-gray-700 dark:text-gray-200 md:text-xl">
+                                                    $220</h1>
+                                                <button
+                                                    class="px-2 py-1 text-xs font-bold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded dark:bg-gray-700 hover:bg-purple-700 dark:hover:bg-purple-600 focus:outline-none focus:bg-purple-700 dark:focus:bg-purple-600">Guardar</button>
+                                                <button
+                                                    class="px-2 py-1 text-xs font-bold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:bg-gray-700 dark:focus:bg-gray-600">Add
+                                                    to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 md:w-1/3">
+                        <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+
+                            <div class="p-6">
+                                <section>
+
+                                    <div
+                                        class="flex max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                                        <div class="w-1/3 bg-cover"
+                                            style="background-image: url('https://images.unsplash.com/photo-1494726161322-5360d4d0eeae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80')">
+                                        </div>
+
+                                        <div class="w-2/3 p-4 md:p-4">
+                                            <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Backpack</h1>
+
+                                            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Lorem ipsum dolor
+                                                sit amet consectetur adipisicing elit In odit</p>
+
+                                            <div class="flex mt-2 item-center">
+                                                <svg class="w-5 h-5 text-gray-700 fill-current dark:text-gray-300"
+                                                    viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                                                </svg>
+
+                                                <svg class="w-5 h-5 text-gray-700 fill-current dark:text-gray-300"
+                                                    viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                                                </svg>
+
+                                                <svg class="w-5 h-5 text-gray-700 fill-current dark:text-gray-300"
+                                                    viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                                                </svg>
+
+                                                <svg class="w-5 h-5 text-gray-500 fill-current" viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                                                </svg>
+
+                                                <svg class="w-5 h-5 text-gray-500 fill-current" viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                                                </svg>
+                                            </div>
+
+                                            <div class="flex justify-between mt-3 item-center">
+                                                <h1
+                                                    class="text-lg font-bold text-gray-700 dark:text-gray-200 md:text-xl">
+                                                    $220</h1>
+                                                <button
+                                                    class="px-2 py-1 text-xs font-bold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded dark:bg-gray-700 hover:bg-purple-700 dark:hover:bg-purple-600 focus:outline-none focus:bg-purple-700 dark:focus:bg-purple-600">Guardar</button>
+                                                <button
+                                                    class="px-2 py-1 text-xs font-bold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:bg-gray-700 dark:focus:bg-gray-600">Add
+                                                    to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 md:w-1/3">
+                        <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+
+                            <div class="p-6">
+                                <section>
+
+                                    <div
+                                        class="flex max-w-md mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                                        <div class="w-1/3 bg-cover"
+                                            style="background-image: url('https://images.unsplash.com/photo-1494726161322-5360d4d0eeae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80')">
+                                        </div>
+
+                                        <div class="w-2/3 p-4 md:p-4">
+                                            <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Backpack</h1>
+
+                                            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Lorem ipsum dolor
+                                                sit amet consectetur adipisicing elit In odit</p>
+
+                                            <div class="flex mt-2 item-center">
+                                                <svg class="w-5 h-5 text-gray-700 fill-current dark:text-gray-300"
+                                                    viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                                                </svg>
+
+                                                <svg class="w-5 h-5 text-gray-700 fill-current dark:text-gray-300"
+                                                    viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                                                </svg>
+
+                                                <svg class="w-5 h-5 text-gray-700 fill-current dark:text-gray-300"
+                                                    viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                                                </svg>
+
+                                                <svg class="w-5 h-5 text-gray-500 fill-current" viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                                                </svg>
+
+                                                <svg class="w-5 h-5 text-gray-500 fill-current" viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
+                                                </svg>
+                                            </div>
+
+                                            <div class="flex justify-between mt-3 item-center">
+                                                <h1
+                                                    class="text-lg font-bold text-gray-700 dark:text-gray-200 md:text-xl">
+                                                    $220</h1>
+                                                <button
+                                                    class="px-2 py-1 text-xs font-bold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded dark:bg-gray-700 hover:bg-purple-700 dark:hover:bg-purple-600 focus:outline-none focus:bg-purple-700 dark:focus:bg-purple-600">Guardar</button>
+                                                <button
+                                                    class="px-2 py-1 text-xs font-bold text-white uppercase transition-colors duration-200 transform bg-gray-800 rounded dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:bg-gray-700 dark:focus:bg-gray-600">Add
+                                                    to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </div>
+    </section>
+
+    <section class="bg-gray-100 dark:bg-gray-900 lg:py-12 lg:flex lg:justify-center">
+        <div class="bg-white dark:bg-gray-800 lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
+            <div class="lg:w-1/2">
+                <div class="h-64 bg-cover lg:rounded-lg lg:h-full" style="background-image:url('img/clark-young-ueZXMrZFFKQ-unsplash.jpg')"></div>
+            </div>
+
+            <div class="max-w-xl px-6 py-12 lg:max-w-5xl lg:w-1/2">
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-white md:text-3xl">Encuentra lo que más te <span class="text-indigo-600 dark:text-indigo-400">apasiona</span></h2>
+                <p class="mt-4 text-gray-600 dark:text-gray-400">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem modi reprehenderit vitae exercitationem aliquid dolores ullam temporibus enim expedita aperiam mollitia iure consectetur dicta tenetur, porro consequuntur saepe accusantium consequatur.</p>
+                
+                <div class="mt-8">
+                    <a href="#" class="px-5 py-2 font-semibold text-gray-100 transition-colors duration-200 transform bg-gray-900 rounded-md hover:bg-gray-700">Start Now</a>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+
+    <!-- Change the colour #f8fafc to match the previous section colour -->
+    <svg class="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g transform="translate(-1.000000, -14.000000)" fill-rule="nonzero">
+        <g class="wave" fill="#f8fafc">
+          <path
+            d="M1440,84 C1383.555,64.3 1342.555,51.3 1317,45 C1259.5,30.824 1206.707,25.526 1169,22 C1129.711,18.326 1044.426,18.475 980,22 C954.25,23.409 922.25,26.742 884,32 C845.122,37.787 818.455,42.121 804,45 C776.833,50.41 728.136,61.77 713,65 C660.023,76.309 621.544,87.729 584,94 C517.525,105.104 484.525,106.438 429,108 C379.49,106.484 342.823,104.484 319,102 C278.571,97.783 231.737,88.736 205,84 C154.629,75.076 86.296,57.743 0,32 L0,0 L1440,0 L1440,84 Z">
+          </path>
+        </g>
+        <g transform="translate(1.000000, 15.000000)" fill="#FFFFFF">
+          <g transform="translate(719.500000, 68.500000) rotate(-180.000000) translate(-719.500000, -68.500000) ">
+            <path
+              d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496"
+              opacity="0.100000001"></path>
+            <path
+              d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
+              opacity="0.100000001"></path>
+            <path
+              d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z"
+              opacity="0.200000003"></path>
+          </g>
+        </g>
+      </g>
+    </g>
+  </svg>
+  <section class="container mx-auto text-center py-6 mb-12">
+    <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-white">
+      Tenemos una infinidad de articulos
+    </h1>
+    <div class="w-full mb-4">
+      <div class="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
+    </div>
+    <h3 class="my-4 text-3xl leading-tight">
+      Envíos a todo el país
+    </h3>
+    <button
+      class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+      ¡Ver más!
+    </button>
+  </section>
+  <!--Footer-->
+  <div class="relative bg-deep-purple-accent-400">
+    <svg class="absolute top-0 w-full h-6 -mt-5 sm:-mt-10 sm:h-16 text-deep-purple-accent-400"
+      preserveAspectRatio="none" viewBox="0 0 1440 54">
+      <path fill="currentColor"
+        d="M0 22L120 16.7C240 11 480 1.00001 720 0.700012C960 1.00001 1200 11 1320 16.7L1440 22V54H1320C1200 54 960 54 720 54C480 54 240 54 120 54H0V22Z">
+      </path>
+    </svg>
+    <div class="px-4 pt-12 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <div class="grid gap-16 row-gap-10 mb-8 lg:grid-cols-6">
+        <div class="md:max-w-md lg:col-span-2">
+          <a href="/" aria-label="Go home" title="Company" class="inline-flex items-center">
+
+            <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">Orion Delivery</span>
+          </a>
+          <div class="mt-4 lg:max-w-sm">
+            <p class="text-sm text-deep-purple-50">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+              rem aperiam.
+            </p>
+            <p class="mt-4 text-sm text-deep-purple-50">
+              Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
+          <div>
+            <p class="font-semibold tracking-wide text-teal-accent-400">
+              Categorias
+            </p>
+            <ul class="mt-2 space-y-2">
+              <li>
+                <a href="/"
+                  class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Tecnología</a>
+              </li>
+              <li>
+                <a href="/" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Mundo
+                  Gamer</a>
+              </li>
+              <li>
+                <a href="/"
+                  class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Hombre</a>
+              </li>
+              <li>
+                <a href="/"
+                  class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Mujer</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold tracking-wide text-teal-accent-400">FAQs</p>
+            <ul class="mt-2 space-y-2">
+              <li>
+                <a href="/"
+                  class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">¿Medios de
+                  pago?</a>
+              </li>
+              <li>
+                <a href="/" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">¿Dónde
+                  están ubicados?</a>
+              </li>
+              <li>
+                <a href="/"
+                  class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">¿Medios de
+                  contacto?</a>
+              </li>
+
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold tracking-wide text-teal-accent-400">Entradas</p>
+            <ul class="mt-2 space-y-2">
+              <li>
+                <a href="/"
+                  class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Iniciar Sesión</a>
+              </li>
+              <li>
+                <a href="/"
+                  class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Registrarse</a>
+              </li>
+              <li>
+                <a href="/"
+                  class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Tu carrito</a>
+              </li>
+              <li>
+                <a href="/"
+                  class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Tu lista de deseos</a>
+              </li>
+              <li>
+                <a href="/"
+                  class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Tu perfil</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="font-semibold tracking-wide text-teal-accent-400">
+              Orion Delivery
+            </p>
+            <ul class="mt-2 space-y-2">
+              <li>
+                <a href="/"
+                  class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Trabaja con nosotros</a>
+              </li>
+              <li>
+                <a href="/"
+                  class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Sobre nosotros</a>
+              </li>
+              <li>
+                <a href="/"
+                  class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Ultimas Noticias</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col justify-between pt-5 pb-10 border-t border-deep-purple-accent-200 sm:flex-row">
+        <p class="text-sm text-gray-100">
+          © Copyright 2021 Lorem Inc. Todos los derechos reservados
+        </p>
+        <div class="flex items-center mt-4 space-x-4 sm:mt-0">
+          <a href="/" class="transition-colors duration-300 text-deep-purple-100 hover:text-teal-accent-400">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
+              <path
+                d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z">
+              </path>
+            </svg>
+          </a>
+          <a href="/" class="transition-colors duration-300 text-deep-purple-100 hover:text-teal-accent-400">
+            <svg viewBox="0 0 30 30" fill="currentColor" class="h-6">
+              <circle cx="15" cy="15" r="4"></circle>
+              <path
+                d="M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10   C27,6.14,23.859,3,19.999,3z M15,21c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S18.309,21,15,21z M22,9c-0.552,0-1-0.448-1-1   c0-0.552,0.448-1,1-1s1,0.448,1,1C23,8.552,22.552,9,22,9z">
+              </path>
+            </svg>
+          </a>
+          <a href="/" class="transition-colors duration-300 text-deep-purple-100 hover:text-teal-accent-400">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
+              <path
+                d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z">
+              </path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

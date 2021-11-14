@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Administrar usuarios</title>
+    <meta name="description" content="description here">
+    <meta name="keywords" content="keywords,here">
+	
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js" integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin="anonymous"></script>
+
+
+
+</head>
+<body class=" font-sans leading-normal tracking-normal">
+
+    <nav id="header" class="bg-purple-100 fixed w-full z-10 top-0 shadow">
+	
+
+		<div class="w-full container  bg-purple-100 flex  items-center mt-0 md:pb-0">
+				
+			<div class="w-1/2 ">
+                <img style='width:200px' src="{{ url_for('static', filename='img/Logorect.png') }}" alt="">
+            </div>
+
+
+
+			<div class="w-1/2  bg-right-bottom  ">
+				<div class="flex relative inline-block float-right">
+				
+				  <div class="relative text-sm text-gray-100">
+					  <button id="userButton" class="flex items-center align-right focus:outline-none mr-3">
+						<img style='width: 50px; height:50px'class="w-8 h-8 rounded-full mr-4 " src="http://i.pravatar.cc/300" alt="Avatar of User"> <span class="hidden md:inline-block font-bold text-purple-600">Hola, {{usuario.nombre}}</span>
+						<svg class="pl-2 h-2 fill-current text-gray-100" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129"><g><path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"/></g></svg>
+					  </button>
+					  <div id="userMenu" class="bg-purple-400 rounded shadow-md mt-2 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible">
+						  <ul class="list-reset">
+							<li><hr class="border-t mx-2 border-gray-400"></li>
+							<li><a href="/logout" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Logout</a></li>
+						  </ul>
+					  </div>
+				  </div>
+
+
+					<div class="block lg:hidden ">
+					<button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-100 hover:border-teal-500 appearance-none focus:outline-none">
+						<svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+					</button>
+				</div>
+				</div>
+
+			</div>
+			
+		</div>
+	</nav>
+	<!--Container-->
+	<div class="flex w-full  mx-auto ">
+
+        <div class=" pt-20 lg:flex  lg:items-top   lg:w-40 hidden lg:block mt-2 lg:mt-0 bg-purple-100   " id="nav-content">
+            <ul class="list-reset lg:flex flex-col items-rigth px-4 md:px-0">
+                <li class="mr-6 my-2 md:my-0">
+                    <a href="/" class="block py-1 md:py-3 pl-1 align-middle text-purple-500 no-underline hover:text-gray-900 border-b-2 border-gray-900 hover:border-blue-400">
+                        <i class="fas fa-home fa-fw mr-3 text-purple-900"></i><span class="pb-1 md:pb-0 text-sm">Home</span>
+                    </a>
+                </li>
+                <li class="mr-6 my-2 md:my-0">
+                    <a href="/listados" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-gray-900  hover:border-yellow-300">
+                        <i class="fas fa-tasks fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">listados</span>
+                    </a>
+                </li>
+                <li class="mr-6 my-2 md:my-0">
+                    <a href="/registro_admin" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-gray-900  hover:border-red-500">
+                        <i class="fas fa-user-plus mr-3"></i><span class="pb-1 md:pb-0 text-sm">Registro</span>
+                    </a>
+                </li>
+                <li class="mr-6 my-2 md:my-0">
+                    <a href="/usuario_admin" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-gray-900  hover:border-blue-100">
+                        <i class="fas fa-users-cog mr-3"></i><span class="pb-1 md:pb-0 text-sm">Usuarios</span>
+                    </a>
+                </li>
+                <li class="mr-6 my-2 md:my-0">
+                    <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-gray-900  hover:border-green-400">
+                        <i class="fas fa-cart-plus mr-3"></i><span class="pb-1 md:pb-0 text-sm">Nuevo </span>
+                    </a>
+                </li>
+                <li class="mr-6 my-2 md:my-0">
+                    <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-900 border-b-2 border-gray-900  hover:border-green-400">
+                        <i class="fas fa-shopping-cart mr-3"></i><span class="pb-1 md:pb-0 text-sm">Administrar</span>
+                    </a>
+                </li>
+
+            </ul>
+            
+
+            
+        </div>
+		
+		<div class="w-full px-4 md:px-0 pt-20 mb-16 text-gray-800 leading-normal">
+			
+			<!--Console Content-->
+			
+			<div class="flex flex-wrap items-center">
+                <form  action="/listados" method="post" class="flex flex-wrap w-full mx-3">
+                    <div class="w-1/2 px-3 mb-5">
+                        <label for="" class="text-xs font-semibold px-1">Rango Acumulado de Compras</label>
+                        <div class="flex">
+                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                            <input type="text" name="rango_compras" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" placeholder="Ej. min-Max">
+                        </div>
+                    
+                        <label for="" class="text-xs font-semibold px-1">Rango de Bonos de Descuentos</label>
+                        <div class="flex">
+                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                            <input type="text" name="rango_bonos" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" placeholder="Ej. min-Max">
+                        </div>
+
+                        <label for="" class="text-xs font-semibold px-1">Sexo</label>
+                        <div class="flex">
+                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                            <select name="sexo" id="sexo" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500">
+                              <option value="M">Masculino</option>
+                              <option value="F">Femenino</option>
+                            </select>
+                          </div>
+                       
+                    
+                    
+                        <label for="" class="text-xs font-semibold px-1">Fecha de nacimiento</label>
+                        <div class="flex">
+                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                            <input type="date" name="fecha_nac" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" >
+                        </div>
+                    
+                  
+                    
+                        <label for="" class="text-xs font-semibold px-1">Compra de producto Especifico</label>
+                        <div class="flex">
+                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                            <input type="text" name="prod_esp" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" placeholder="Ej: Cra 24 # 21-25">
+                        </div>
+                        <!-- Fecha de nacimiento <input type="date"> -->
+                    
+                    
+                        <label for="" class="text-xs font-semibold px-1">Ciudad</label>
+                        <div class="flex">
+                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                            <input type="text" name="ciudad" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" placeholder="Ej: Medellin">
+                        </div>
+                    
+                    
+                        <label for="" class="text-xs font-semibold px-1">Fecha de Compra</label>
+                        <div class="flex">
+                            <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                            <input type="date" name="fecha_compra" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-purple-500 outline-none focus:border-indigo-500" placeholder="Ej: Administrador">
+                        </div>
+                      </div>
+                    
+                </div>
+                <div>
+                <div class="flex ">
+                    <div class="w-full px-3 m-10 ">
+                        <button type ="submit" class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">FILTRAR</button>
+                    </div>
+
+
+                </div>
+
+              </form>
+
+			<!--Divider-->
+		
+
+            								
+			<!--/ Console Content-->
+					
+		</div>
+        <section class="container mx-auto p-6  font-mono">
+            <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+              <div class="w-full overflow-x-auto ">
+                <table class="w-full ">
+                  <thead>
+                    <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-purple-200 uppercase border-b border-gray-600">
+                      <th class="px-4 py-3">Nombre/Apellidos</th>
+                      <th class="px-4 py-3">Fecha de Nacimiento</th>
+                      <th class="px-4 py-3">Sexo</th>
+                      <th class="px-4 py-3">#compras</th>
+                      <th class="px-4 py-3">#Bonos</th>
+                      <th class="px-4 py-3">Compra/Producto</th>
+                      <th class="px-4 py-3">Fecha de Compra</th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-purple-20"></tbody>
+                    {% for usuario in lista_usuarios%}
+                      <tr class="text-gray-700">
+                        <td class="px-4 py-3 border">
+                          <div class="flex items-center text-sm">
+                            <div class="relative w-8 h-8 mr-3 rounded-full">
+                              <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
+                              <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                            </div>
+                            <div>
+                              <p class="font-semibold text-black">{{usuario.nombre}}</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="px-4 py-3 text-md font-semibold border">{{usuario.fecha_nac}}</td>
+                        <td class="px-4 py-3 text-xs border">
+                          <span class="px-2 py-1 font-semibold leading-tight text-orange-700 bg-gray-100 rounded-sm"> {{usuario.sexo}} </span>
+                        </td>
+                        <td class="px-4 py-3 text-sm border">{{usuario.nombre}}</td>
+                        <td class="px-4 py-3 text-sm border">30</td>
+                        <td class="px-4 py-3 text-sm border">Xiaomi Redmi Note 9</td>
+                        <td class="px-4 py-3 text-sm border">6/10/2020</td>
+                        
+                      </tr>
+                    {% endfor %}
+                    <!-- <tr class="text-gray-700">
+                      <td class="px-4 py-3 border">
+                        <div class="flex items-center text-sm">
+                          <div class="relative w-8 h-8 mr-3 rounded-full">
+                            <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
+                            <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                          </div>
+                          <div>
+                            <p class="font-semibold">Nora</p>
+                            
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3 text-md font-semibold border">6/11/2020</td>
+                      <td class="px-4 py-3 text-xs border">
+                        <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-sm"> Femenino </span>
+                      </td>
+                      <td class="px-4 py-3 text-sm border">100</td>
+                      <td class="px-4 py-3 text-sm border">50</td>
+                      <td class="px-4 py-3 text-sm border">Audifonos Astro 2</td>
+                      <td class="px-4 py-3 text-sm border">6/11/2020</td>
+                      
+                    </tr>
+                    <tr class="text-gray-700">
+                      <td class="px-4 py-3 border">
+                        <div class="flex items-center text-sm">
+                          <div class="relative w-8 h-8 mr-3 rounded-full">
+                            <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
+                            <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                          </div>
+                          <div>
+                            <p class="font-semibold">Ali</p>
+                            
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3 border text-md font-semibold">6/11/2020</td>
+                      <td class="px-4 py-3 border text-xs">
+                        <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Masculino </span>
+                      </td>
+                      <td class="px-4 py-3 text-sm border">20</td>
+                      <td class="px-4 py-3 text-sm border">2</td>
+                      <td class="px-4 py-3 text-sm border">Relog de pared</td>
+                      <td class="px-4 py-3 text-sm border">6/10/2020</td>
+                    </tr>
+                    <tr class="text-gray-700">
+                      <td class="px-4 py-3 border">
+                        <div class="flex items-center text-sm">
+                          <div class="relative w-8 h-8 mr-3 rounded-full">
+                            <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
+                            <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                          </div>
+                          <div>
+                            <p class="font-semibold">Khalid</p>
+                            
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3 border text-md font-semibold">6/11/2020</td>
+                      <td class="px-4 py-3 border text-xs">
+                        <span class="px-2 py-1 font-semibold leading-tight text-gray-700 bg-gray-100 rounded-sm"> otro </span>
+                      </td>
+                      <td class="px-4 py-3 text-sm border">300</td>
+                      <td class="px-4 py-3 text-sm border">250</td>
+                      <td class="px-4 py-3 text-sm border">Gorro de Lana</td>
+                      <td class="px-4 py-3 text-sm border">6/10/2020</td>
+                    </tr>
+                    <tr class="text-gray-700">
+                      <td class="px-4 py-3 border">
+                        <div class="flex items-center text-sm">
+                          <div class="relative w-8 h-8 mr-3 rounded-full">
+                            <img class="object-cover w-full h-full rounded-full" src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" loading="lazy" />
+                            <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                          </div>
+                          <div>
+                            <p class="font-semibold">Nasser</p>
+                            
+                          </div>
+                        </div>
+                      </td>
+                      <td class="px-4 py-3 border text-md font-semibold">7/11/2020</td>
+                      <td class="px-4 py-3 border text-xs">
+                        <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Masculino </span>
+                      </td>
+                      <td class="px-4 py-3 text-sm border">5</td>
+                      <td class="px-4 py-3 text-sm border">0</td>
+                      <td class="px-4 py-3 text-sm border">Apple Watch</td>
+                      <td class="px-4 py-3 text-sm border">6/10/2020</td>
+                    </tr> -->
+          
+          
+          
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        <footer class="bg-gray-700 border-t border-gray-400 shadow -mb-14">	
+            <div class="container max-w-md mx-auto flex py-8">
+    
+                <div class="w-full mx-auto flex flex-wrap">
+                    <div class="flex w-full md:w-1/2 ">
+                        <div class="px-8">
+                            <h3 class="font-bold font-bold text-gray-100">Desarrollado por:</h3>
+                            <p class="py-4 text-gray-100 text-sm">
+                              Jhon Trujillo <br> Juan Pablo Jimenez <br> Willy Corzo <br> Jhon Jairo Saboya <br> Dylan Barajas 
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex w-full md:w-1/2">
+                        <div class="px-8">
+                        <h3 class="font-bold font-bold text-gray-100">Social</h3>
+                            <ul class="list-reset items-center text-sm pt-3">
+                              <li>
+                                <i class="fab fa-instagram "></i> <a class="inline-block text-gray-100 no-underline hover:text-gray-100 hover:text-underline py-1" href="#">INSTAGRAM </a>
+                              </li>
+                              <li>
+                                <i class="fab fa-facebook"></i> <a class="inline-block text-gray-100 no-underline hover:text-gray-100 hover:text-underline py-1" href="#">FACEBOOK</a>
+                              </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            
+    
+            
+            </div>
+        </footer>
+        
+		
+
+	</div> 
+	<!--/container-->
+    
+	
+
+
+
+
+</body>
+</html>
